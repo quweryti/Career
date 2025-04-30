@@ -1,0 +1,47 @@
+/*
+ * 
+ * version: 1.0.1
+ * date : 2025/04/28
+ * 作成者 : 中村
+ * 
+ */ 
+
+
+ .sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+
+.link-list, .follow-list {
+	border: 2px solid #ccc;
+	padding: 5px;
+	border-radius: 10px;
+	font-size: 35px;
+	text-align: center;
+	border-radius: 20%;
+}
+
+
+.link-list {
+	background: #aee0f9;
+
+}
+
+
+.follow-list {
+	background: #e4b0e4;
+}
+
+
+.link-listbtn{
+	padding: 5px;
+	border-radius: 50px;
+}
+
+
+.follow-listbtn{
+	padding: 5px;
+	border-radius: 50px;
+}
