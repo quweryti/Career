@@ -1,50 +1,50 @@
-# -----------------------
-# Maven
-# -----------------------
-/target/                            # 빌드 아티팩트
-!/.mvn/wrapper/maven-wrapper.jar    # maven wrapper jar만 예외
-!**/src/main/**/target/            # 멀티모듈일 경우 서브모듈 target 제외 해제
-!**/src/test/**/target/            # 테스트 모듈 target 제외 해제
+# # -----------------------
+# # Maven
+# # -----------------------
+# /target/                            # 빌드 아티팩트
+# !/.mvn/wrapper/maven-wrapper.jar    # maven wrapper jar만 예외
+# !**/src/main/**/target/            # 멀티모듈일 경우 서브모듈 target 제외 해제
+# !**/src/test/**/target/            # 테스트 모듈 target 제외 해제
 
-# -----------------------
-# Eclipse / STS
-# -----------------------
-/bin/                               # Eclipse 빌드 출력 폴더
-.apt_generated/                     # Annotation Processing
-.classpath
-.factorypath
-.project
-.settings/                          # Eclipse 프로젝트 설정
-.springBeans                        # STS 스프링 뷰 설정
-.sts4-cache/                        # STS 캐시
+# # -----------------------
+# # Eclipse / STS
+# # -----------------------
+# /bin/                               # Eclipse 빌드 출력 폴더
+# .apt_generated/                     # Annotation Processing
+# .classpath
+# .factorypath
+# .project
+# .settings/                          # Eclipse 프로젝트 설정
+# .springBeans                        # STS 스프링 뷰 설정
+# .sts4-cache/                        # STS 캐시
 
-# -----------------------
-# IntelliJ IDEA
-# -----------------------
-.idea/                              # IDEA 프로젝트 설정
-*.iws
-*.iml
-*.ipr
+# # -----------------------
+# # IntelliJ IDEA
+# # -----------------------
+# .idea/                              # IDEA 프로젝트 설정
+# *.iws
+# *.iml
+# *.ipr
 
-# -----------------------
-# NetBeans
-# -----------------------
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/                              # NetBeans 빌드 출력
-!**/src/main/**/build/              # 서브모듈 build 제외 해제
-!**/src/test/**/build/
+# # -----------------------
+# # NetBeans
+# # -----------------------
+# /nbproject/private/
+# /nbbuild/
+# /dist/
+# /nbdist/
+# /.nb-gradle/
+# build/                              # NetBeans 빌드 출력
+# !**/src/main/**/build/              # 서브모듈 build 제외 해제
+# !**/src/test/**/build/
 
-# -----------------------
-# VS Code
-# -----------------------
-.vscode/                            # 에디터 설정
+# # -----------------------
+# # VS Code
+# # -----------------------
+# .vscode/                            # 에디터 설정
 
-# -----------------------
-# OS별
-# -----------------------
-.DS_Store
-Thumbs.db
+# # -----------------------
+# # OS별
+# # -----------------------
+# .DS_Store
+# Thumbs.db
