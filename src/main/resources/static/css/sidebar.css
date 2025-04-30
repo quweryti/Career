@@ -1,7 +1,7 @@
 /*
  * 
- * version: 1.0.1
- * date : 2025/04/28
+ * version: 1.0.2
+ * date : 2025/04/30
  * 作成者 : 中村
  * 
  */ 
@@ -24,24 +24,36 @@
 }
 
 
-.link-list {
+/*.link-list {
 	background: #aee0f9;
 
-}
+}*/
 
 
 .follow-list {
-	background: #e4b0e4;
+	grid-template-columns: repeat(3, fr 1);		/* フォローリストの中身を3 * 1(ボタン三つで改行したい) */
 }
 
 
 .link-listbtn{
-	padding: 5px;
-	border-radius: 50px;
+	width: 60px;
+	height: 60px;
+	background-color: aquamarine;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+	margin: 5px;
+	cursor: pointer;	
 }
 
 
 .follow-listbtn{
-	padding: 5px;
-	border-radius: 50px;
+	width: 60px;
+	height: 60px;
+	background-color: #e8aee0;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+	margin: 5px;
+	cursor: pointer;
 }

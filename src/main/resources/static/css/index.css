@@ -17,7 +17,7 @@ body {		/*　画面全体のレイアウト　*/
 	
 			
 .main-content {		/* 右側の広い部分 */
-	position: relative;
+	position: absolute;
 }
 
 
@@ -27,5 +27,17 @@ body {		/*　画面全体のレイアウト　*/
 	text-align: center;
 	font-size: 2rem;
 	padding: 50px 0;
-	border-radius: 2px solid #000;
+	border: 2px solid #000;
+	border-radius: 10px;
+}
+
+.main-container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	border: 2px solid rgb(64, 128, 128);
+	padding: 35px;
+	border-radius: 10px;
+	font-size: 2rem;
+	margin-top: 20px;
 }
