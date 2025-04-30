@@ -5,8 +5,10 @@
  * version : 1.0.0
  * date : 2025/04/23
  * 
- * 작성
- *  권유진
+ * 作成者
+ *  クォン
+ *  
+ *  
  */
 package com.gpipi.career.controller;
 
@@ -31,4 +33,13 @@ public class MainPageController {
 		return "redirect:/career/main";
 	}
 
+
+	
+	
+	
+			
+		
+	
+	
+	
 }
