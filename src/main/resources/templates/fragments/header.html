@@ -1,14 +1,25 @@
-<!---
-version: 1.0.1
-date : 2025/04/28
-作成者 : 中村
- -->
+<!--
+	version
+		1.0.1
+	date
+		2025/04/28
+	create
+		Nakamura
+		Kwon Yujin
+  -->
 
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="siteHeader">
+	<div class="main-content">
+		<div class="profile-area">
+			<!-- プロフィール検索 -->
+			<form action="/search/user" method="get" name="searchUser">
+				<input type="text" class="search-area" placeholder="検索" style=width:100%; />
+				<input type="submit" value="search" name="searchSubmit" />
+			</form>
+			<!-- プロフィール -->
+			<div>
 
-<div class = "main-content">
-	<div class = "profile-area">
-		<button class = "profileimg-area">	<!-- アイコンの画像のためのボタン -->
-		<input type = "text" class = "search-area" placeholder = "検索" style = width:100%;>
-			<div>プロフィールエリア</div>
+			</div>
+		</div>
 	</div>
 </div>

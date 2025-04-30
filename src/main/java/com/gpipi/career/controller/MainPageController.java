@@ -1,14 +1,14 @@
 /* 
  * MainPageController
- * 메인 부분에 할당하는 페이지의 이름을 전달합니다.
+ * 	send main page name
  * 
- * version : 1.0.0
- * date : 2025/04/23
+ * version
+ * 	1.0.0
+ * date
+ * 	2025/04/23
  * 
- * 作成者
- *  クォン
- *  
- *  
+ * create
+ *  Kwon Yujin
  */
 package com.gpipi.career.controller;
 
@@ -32,14 +32,5 @@ public class MainPageController {
 	public String mainRedirect() {
 		return "redirect:/career/main";
 	}
-
-
-	
-	
-	
-			
-		
-	
-	
 	
 }
