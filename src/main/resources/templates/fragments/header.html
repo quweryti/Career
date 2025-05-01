@@ -9,17 +9,18 @@
   -->
 
 <div xmlns:th="http://www.thymeleaf.org" th:fragment="siteHeader">
-	<div class="main-content">
-		<div class="profile-area">
-			<!-- プロフィール検索 -->
-			<form action="/search/user" method="get" name="searchUser">
-				<input type="text" class="search-area" placeholder="検索" style=width:100%; />
-				<input type="submit" value="search" name="searchSubmit" />
-			</form>
-			<!-- プロフィール -->
-			<div>
-
+	<div class="profile-area">
+		<div class="profile-box">
+			<div class="search-and-icon">
+				<!-- プロフィール検索 -->
+				<form class="search-form" action="/search/user" method="get">
+					<input type="text" name="query" placeholder="検索" style=width:100%; />
+					<input type="submit" value="search" />
+				</form>
+				<!-- プロフィール -->
+				<div class="profile-icon"></div>
 			</div>
+				<div class="profile-label"></div>
 		</div>
 	</div>
 </div>

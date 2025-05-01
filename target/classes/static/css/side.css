@@ -13,36 +13,61 @@
 	gap: 20px;
 }
 
-.link-list, .follow-list {
+.link-list .btn-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	/*margin-top: 10px;*/
+}
+
+
+.link-list {
 	border: 2px solid #ccc;
-	padding: 100px;
-	border-radius: 10px;
+	padding: 10px;
 	font-size: 35px;
 	text-align: center;
 	border-radius: 20%;
+	max-width: none;
 }
 
-/*.link-list {
-	background: #aee0f9;
-}*/
+.follow-list .btn-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
 
 .follow-list {
-	grid-template-columns: repeat(3, fr 1);		/* フォローリストの中身を3 * 1(ボタン三つで改行したい) */
+	border: 2px solid #ccc;
+	margin-top: 100px;
+	padding: 10px;
+	border-radius: 20px;
+	font-size: 35px;
+	text-align: center;
+	border-radius: 20%;
+	max-width: none;
 }
 
-#linkBtn{
-	width: 60px;
+.ListMng{
+	max-width: 30%;
+}
+
+.linkBtn {
+	width: calc(25% - 20px);
+	max-width: 80px;
 	height: 60px;
 	background-color: aquamarine;
 	border-radius: 10px;
 	border: none;
 	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 	margin: 5px;
-	cursor: pointer;	
+	cursor: pointer;
 }
 
-.follow-listbtn{
-	width: 60px;
+.follow-listbtn {
+	width: calc(25% - 20px);
+	max-width: 80px;
 	height: 60px;
 	background-color: #e8aee0;
 	border-radius: 10px;
