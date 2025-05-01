@@ -8,11 +8,15 @@
  *	Kwon
  */ 
 
+/*.search-area {
+	right: 0px;
+	left: 500px;
+}*/
+
 .profile-area {
 	display: flex;
 	justify-content: flex-end;
 }
-
 
 .profile-box {
 	    background-color: #fff;
@@ -25,6 +29,7 @@
 	    align-items: flex-end;
 	    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
+
 .search-form {
 	display: flex;
 	flex: 1;
@@ -37,13 +42,11 @@
 	font-size: 14px;
 }
 
-
 .search-form input[type="submit"] {
 	padding: 5px 10px;
 	font-size: 14px;
 	cursor: pointer;
 }
-
 
 .profile-icon {
 	width: 30px;
@@ -53,23 +56,22 @@
 	background-color: #eee;
 }
 
-
 .profile-label {
 	text-align: right;
 	font-size: 12px;
 	margin-top: 5px;
 }
 
-
 input{
 	font-size: 20px;
 }
 
-
-.search-and-icon {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: space-between;
-	gap: 10px;
+.icon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50px;
+	background-color: gray;
+	position: relative;
+	top: 10px;
+	right: 10px;
 }

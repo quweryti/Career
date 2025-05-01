@@ -1,23 +1,21 @@
 /*
- * 
- * version: 1.0.1
- * date : 2025/04/28
- * 作成者 : 中村
- * 
- */ 
- 
+ * version
+ *	1.0.2
+ * date
+ *	2025/04/30
+ * create
+ *	Nakanura
+ */
 
 body {		/*　画面全体のレイアウト　*/
 	display: grid;
 	gap: 20px;
 	font-family: sans-serif;
 }
-	
-			
+
 .main-content {		/* 右側の広い部分 */
 	position: absolute;
 }
-
 
 .introduction {		/*　所属紹介　*/
 	margin-top: 100px;

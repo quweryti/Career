@@ -5,10 +5,9 @@
  * date
  *     2025/04/30
  * creater
- *     中村
+ *     Nakamura
  * 
  */ 
-
 
 fetch('/header.html')
 	.then(res => res.text())

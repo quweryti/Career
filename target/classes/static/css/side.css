@@ -1,11 +1,11 @@
 /*
- * 
- * version: 1.0.2
- * date : 2025/04/30
- * 作成者 : 中村
- * 
- */ 
-
+ * version
+ *	1.0.2
+ * date
+ *	2025/04/30
+ * create
+ *	Nakanura
+ */
 
  .sidebar {
 	display: flex;
@@ -13,17 +13,7 @@
 	gap: 20px;
 }
 
-
-.link-list .btn-group {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 10px;
-	/*margin-top: 10px;*/
-}
-
-
-.link-list {
+.link-list, .follow-list {
 	border: 2px solid #ccc;
 	padding: 10px;
 	font-size: 35px;
@@ -32,14 +22,9 @@
 	max-width: none;
 }
 
-
-.follow-list .btn-group {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 10px;
-}
-
+/*.link-list {
+	background: #aee0f9;
+}*/
 
 .follow-list {
 	border: 2px solid #ccc;
@@ -52,15 +37,8 @@
 	max-width: none;
 }
 
-
-
-.ListMng{
-	max-width: 30%;
-}
-
-.linkBtn {
-	width: calc(25% - 20px);
-	max-width: 80px;
+#linkBtn{
+	width: 60px;
 	height: 60px;
 	background-color: aquamarine;
 	border-radius: 10px;
@@ -70,10 +48,8 @@
 	cursor: pointer;
 }
 
-
-.follow-listbtn {
-	width: calc(25% - 20px);
-	max-width: 80px;
+.follow-listbtn{
+	width: 60px;
 	height: 60px;
 	background-color: #e8aee0;
 	border-radius: 10px;
