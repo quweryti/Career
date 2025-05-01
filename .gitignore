@@ -19,7 +19,7 @@
 .sts4-cache/                        # STS 캐시
 .factorypath                        # Annotation Processor 설정
 .apt_generated/                     # APT generated 코드
-/bin/                               # Eclipse 빌드 출력 폴더
+bin/                                # Eclipse 빌드 출력 폴더
 .m2e-wtp/                           # WTP 관련 메타데이터
 
 # ─────────────────────────────────────────────────
