@@ -8,12 +8,17 @@
  *	Kwon
  */ 
 
-
+/*.search-area {
+	right: 0px;
+	left: 500px;
+}*/
+ 
+ 
 .profile-area {
-	position: fixed;
+	position: relative;
 	top: 0;
 	right: 0;
-	width: 500px;
+	width: 100px;
 	background: #fff;
 	padding: 10px;
 	border-radius: 10px;

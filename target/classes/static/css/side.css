@@ -16,7 +16,7 @@
 
 .link-list, .follow-list {
 	border: 2px solid #ccc;
-	padding: 5px;
+	padding: 100px;
 	border-radius: 10px;
 	font-size: 35px;
 	text-align: center;
@@ -35,7 +35,7 @@
 }
 
 
-.link-listbtn{
+#linkBtn{
 	width: 60px;
 	height: 60px;
 	background-color: aquamarine;

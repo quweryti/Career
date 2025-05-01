@@ -1,3 +1,14 @@
+/*
+ * 
+ * 	version
+ * 	   1.0.1
+ * date
+ *     2025/04/30
+ * creater
+ *     中村
+ * 
+ */ 
+
 document.addEventListener("DOMContentLoaded", () => {
 	fetch("/layout.html")
 		.then(response => {
