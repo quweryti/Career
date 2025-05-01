@@ -1,0 +1,78 @@
+/*
+ * version
+ *	1.0.2
+ * date
+ *	2025/04/30
+ * create
+ *	Nakanura
+ */
+
+ .sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.link-list .btn-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	/*margin-top: 10px;*/
+}
+
+
+.link-list {
+	border: 2px solid #ccc;
+	padding: 10px;
+	font-size: 35px;
+	text-align: center;
+	border-radius: 20%;
+	max-width: none;
+}
+
+.follow-list .btn-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
+
+.follow-list {
+	border: 2px solid #ccc;
+	margin-top: 100px;
+	padding: 10px;
+	border-radius: 20px;
+	font-size: 35px;
+	text-align: center;
+	border-radius: 20%;
+	max-width: none;
+}
+
+.ListMng{
+	max-width: 30%;
+}
+
+.linkBtn {
+	width: calc(25% - 20px);
+	max-width: 80px;
+	height: 60px;
+	background-color: aquamarine;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+	margin: 5px;
+	cursor: pointer;
+}
+
+.follow-listbtn {
+	width: calc(25% - 20px);
+	max-width: 80px;
+	height: 60px;
+	background-color: #e8aee0;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+	margin: 5px;
+	cursor: pointer;
+}

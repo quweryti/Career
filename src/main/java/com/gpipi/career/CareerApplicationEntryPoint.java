@@ -1,12 +1,14 @@
 /* 
  * CareerApplicationEntryPoint
- * 엔트리 포인트 역할
+ * 	entry point
  * 
- * version : 1.0.0
- * date : 2025/04/23
+ * version
+ * 	1.0.0
+ * date
+ * 	2025/04/23
  * 
- * 작성
- *  권유진
+ * create
+ *  Kwon Yujin
  */
 package com.gpipi.career;
 
