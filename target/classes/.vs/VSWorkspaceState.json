@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\static",
+    "\\static\\css",
+    "\\templates",
+    "\\templates\\fragments",
+    "\\templates\\main"
+  ],
+  "SelectedNode": "\\templates\\fragments\\header.html",
+  "PreviewInSolutionExplorer": false
+}
