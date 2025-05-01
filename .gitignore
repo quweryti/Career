@@ -1,7 +1,12 @@
 # ─────────────────────────────────────────────────
 # Maven
 # ─────────────────────────────────────────────────
-/target/                             # Maven 빌드 아티팩트
+/target/                             # Maven 빌드 아티팩트 전체
+**/target/                           # 서브모듈의 target/ 도 포함
+*.class                              # 혹시 남은 .class 파일
+/build/                              # Gradle 빌드 아티팩트 (NetBeans 등)
+
+/bin/                                # Eclipse 빌드 출력
 !/.mvn/wrapper/maven-wrapper.jar     # Maven Wrapper JAR (예외로 남김)
 
 # ─────────────────────────────────────────────────
