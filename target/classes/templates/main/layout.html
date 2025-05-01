@@ -7,17 +7,18 @@
 		Kwon Yujin
   -->
 
-<div xmlns:th="http://www.thymeleaf.org" th:fragment="layout()">
-	<!-- header fragment -->
+<!-- templates/main/layout.html -->
+<body xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+	<!-- header -->
 	<div th:replace="fragments/header :: siteHeader"></div>
-	<!-- sidebar fragment -->
+	<!-- side -->
 	<div th:replace="fragments/side :: siteSide"></div>
-
+	
 	<!-- main -->
 	<main>
-		<div th:replace="main/main :: siteMain"></div>
+		<div th:insert="${content} :: siteMain"></div>
 	</main>
 	
 	<!-- footer -->
 	<div th:replace="fragments/footer :: siteFooter"></div>
-</div>
+</body>
