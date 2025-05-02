@@ -1,18 +1,26 @@
 /*
  * version
- * 	1.0.1
+ * 	1.0.2
  * date
- * 	2025/04/28
+ * 	2025/05/02
  * create
  *	Nakamura 
  *	Kwon
  */ 
 
+ .header {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	z-index: 10;	/* 最前面に持ってくる(Bring this element to the front) */
+	background-color: aqua;
+ }
+ 
 .profile-area {
 	display: flex;
 	justify-content: flex-end;
 }
-
 
 .profile-box {
 	    background-color: #fff;
@@ -25,6 +33,15 @@
 	    align-items: flex-end;
 	    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+.search-and-icon {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+
 .search-form {
 	display: flex;
 	flex: 1;
@@ -37,13 +54,11 @@
 	font-size: 14px;
 }
 
-
 .search-form input[type="submit"] {
 	padding: 5px 10px;
 	font-size: 14px;
 	cursor: pointer;
 }
-
 
 .profile-icon {
 	width: 30px;
@@ -53,21 +68,8 @@
 	background-color: #eee;
 }
 
-
 .profile-label {
 	text-align: right;
 	font-size: 12px;
 	margin-top: 5px;
-}
-
-input{
-	font-size: 20px;
-}
-
-.search-and-icon {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: space-between;
-	gap: 10px;
 }
