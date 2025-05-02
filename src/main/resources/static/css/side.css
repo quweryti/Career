@@ -7,13 +7,28 @@
  *	Nakanura
  */
 
+ .side{
+ 	max-width: 30%;
+	position: absolute;
+	background-color: #00ff00;
+} 
+
  .sidebar {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 }
 
-.link-list, .follow-list {
+.link-list .btn-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	/*margin-top: 10px;*/
+}
+
+
+.link-list {
 	border: 2px solid #ccc;
 	padding: 10px;
 	font-size: 35px;
@@ -22,9 +37,12 @@
 	max-width: none;
 }
 
-/*.link-list {
-	background: #aee0f9;
-}*/
+.follow-list .btn-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
 
 .follow-list {
 	border: 2px solid #ccc;
@@ -37,8 +55,9 @@
 	max-width: none;
 }
 
-#linkBtn{
-	width: 60px;
+.linkBtn {
+	width: calc(25% - 20px);
+	max-width: 80px;
 	height: 60px;
 	background-color: aquamarine;
 	border-radius: 10px;
@@ -48,8 +67,9 @@
 	cursor: pointer;
 }
 
-.follow-listbtn{
-	width: 60px;
+.follow-listbtn {
+	width: calc(25% - 20px);
+	max-width: 80px;
 	height: 60px;
 	background-color: #e8aee0;
 	border-radius: 10px;
