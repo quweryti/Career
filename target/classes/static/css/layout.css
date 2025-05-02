@@ -7,22 +7,18 @@
  *	Nakanura
  */
 
-body {		/*　画面全体のレイアウト(Layout for the entire screen)　*/
+body {		/* 画面全体のレイアウト(Layout for the entire screen) */
 	display: grid;
-	gap: 20px;
 	font-family: sans-serif;
+	gap: 20px;
 }
 
 .main {
     position: relative;
-    background-color: lightsalmon;
-    /* bottom: 0%; */
-    grid-area: none;
-    /* right: -81%; */
-    /* transform: translateY(300%); */
     padding: 22%;
-    /* margin-top: -11%; */
-    transform: translateX(-80%);
     text-align: center;
+    background-color: lightsalmon;
+    transform: translateX(-80%);
     transform: translateY(50%);
+    grid-area: none;
 }

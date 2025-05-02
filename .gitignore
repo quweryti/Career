@@ -84,3 +84,12 @@ Thumbs.db
 # Logs
 # ─────────────────────────────────────────────────
 *.log
+
+# Node.js 의존성
+/node_modules/
+
+# npm 잠금 파일 (정책에 따라)
+package-lock.json
+
+# 빌드 산출물 (선택)
+/src/main/resources/static/css/

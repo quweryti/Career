@@ -12,8 +12,8 @@
 	position: absolute;
 	top: 0%;
 	left: 0%;
-	width: 100%;
 	z-index: 10;	/* 最前面に持ってくる(Bring this element to the front) */
+	width: 100%;
 	background-color: aqua;
  }
  
@@ -23,23 +23,23 @@
 }
 
 .profile-box {
-	    background-color: #fff;
-	    border: 2px solid #999;
-	    border-radius: 20px;
-	    padding: 10px 15px;
-	    width: 300px;
 	    display: flex;
-	    flex-direction: column;
+	    width: 300px;
+	    padding: 10px 15px;
+	    border: 2px solid #999;
+	    background-color: #fff;
+	    box-shadow: 2px 2px 8px rgb(0 0 0 / 10%);
 	    align-items: flex-end;
-	    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+	    border-radius: 20px;
+	    flex-direction: column;
 }
 
 .search-and-icon {
 	display: flex;
 	width: 100%;
 	align-items: center;
-	justify-content: space-between;
 	gap: 10px;
+	justify-content: space-between;
 }
 
 .search-form {
@@ -49,9 +49,9 @@
 } 
 
 .search-form input[type="text"] {
-	flex: 1;
 	padding: 5px;
 	font-size: 14px;
+	flex: 1;
 }
 
 .search-form input[type="submit"] {
@@ -64,12 +64,12 @@
 	width: 30px;
 	height: 30px;
 	border: 2px solid #000;
-	border-radius: 50%;
 	background-color: #eee;
+	border-radius: 50%;
 }
 
 .profile-label {
-	text-align: right;
 	font-size: 12px;
+	text-align: right;
 	margin-top: 5px;
 }

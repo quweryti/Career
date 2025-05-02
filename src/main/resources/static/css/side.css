@@ -8,102 +8,71 @@
  */
 
 .side{
-	left: 0%;
-	right: 50%;
- 	max-width: 30%;
 	position: absolute;
-	background-color: #00ff00;
-}
-
-.linkList {
-	
-}
-
-.linkTitle {
-	
-}
-
-.linkBtnGroup {
-	
-}
-
-.linkBtn {
-	
-}
-
-.followList {
-	
-}
-
-.followTitle {
-	
-}
-
-.followBtnGroup {
-	
-}
-
-.followBtn {
-	
+	right: 50%;
+	left: 0%;
+	background-color: #0f0;
+ 	max-width: 30%;
 }
 
 .link-list .btn-group {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
 	gap: 10px;
-	/*margin-top: 10px;*/
+	justify-content: center;
+
+	/* margin-top: 10px; */
 }
 
 .link-list {
-	margin-top: 20%;
-	border: 2px solid #ccc;
 	padding: 10px;
+	border: 2px solid #ccc;
 	font-size: 35px;
 	text-align: center;
 	border-radius: 20%;
+	margin-top: 20%;
 	max-width: none;
 }
 
 .follow-list .btn-group {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
 	gap: 10px;
+	justify-content: center;
 }
 
 .follow-list {
-	border: 2px solid #ccc;
-	margin-top: 20%;
 	padding: 10px;
-	border-radius: 20px;
+	border: 2px solid #ccc;
 	font-size: 35px;
 	text-align: center;
+	border-radius: 20px;
 	border-radius: 20%;
-	max-width: none;
 	margin-bottom: 20%;
+	margin-top: 20%;
+	max-width: none;
 }
 
 .linkBtn {
 	width: calc(25% - 20px);
-	max-width: 80px;
 	height: 60px;
-	background-color: aquamarine;
-	border-radius: 10px;
-	border: none;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 	margin: 5px;
+	border: none;
+	background-color: aquamarine;
+	box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
 	cursor: pointer;
+	border-radius: 10px;
+	max-width: 80px;
 }
 
 .follow-listbtn {
 	width: calc(25% - 20px);
-	max-width: 80px;
 	height: 60px;
-	background-color: #e8aee0;
-	border-radius: 10px;
-	border: none;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 	margin: 5px;
+	border: none;
+	background-color: #e8aee0;
+	box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
 	cursor: pointer;
+	border-radius: 10px;
+	max-width: 80px;
 }
