@@ -1,8 +1,8 @@
 /*
  * version
- * 	1.0.1
+ * 	1.0.2
  * date
- * 	2025/04/28
+ * 	2025/05/02
  * create
  *	Nakamura 
  *	Kwon
@@ -10,6 +10,10 @@
 
  .header {
 	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	z-index: 10;	/* 最前面に持ってくる(Bring this element to the front) */
 	background-color: aqua;
  }
  

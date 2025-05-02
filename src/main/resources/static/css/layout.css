@@ -1,28 +1,38 @@
 /*
  * version
- *	1.0.2
+ *	1.0.3
  * date
- *	2025/04/30
+ *	2025/05/02
  * create
  *	Nakanura
  */
 
-body {		/*　画面全体のレイアウト　*/
+body {		/*　画面全体のレイアウト(Layout for the entire screen)　*/
 	display: grid;
 	gap: 20px;
 	font-family: sans-serif;
 }
 
 .main {
-	position: relative;
-	background-color: lightsalmon;
+    position: relative;
+    background-color: lightsalmon;
+    /* bottom: 0%; */
+    grid-area: none;
+    /* right: -81%; */
+    /* transform: translateY(300%); */
+    padding: 22%;
+    /* margin-top: -11%; */
+    transform: translateX(-80%);
+    text-align: center;
+    transform: translateY(50%);
 }
 
-.main-content {		/* 右側の広い部分 */
-	position: absolute;
+.main-content {		/* main */
+	display: flex;
+	margin-top: 10%;
 }
 
-.introduction {		/*　所属紹介　*/
+.introduction {		/*　所属紹介(Introduction of team members or departments)　*/
 	margin-top: 100px;
 	background: #f9c2a0;
 	text-align: center;
