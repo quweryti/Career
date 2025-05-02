@@ -6,8 +6,12 @@
  * create
  *	Nakanura
  */
-
- .sidebar {
+ 
+.side{
+ 	max-width: 30%;
+}
+ 
+.sidebar {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -47,10 +51,6 @@
 	text-align: center;
 	border-radius: 20%;
 	max-width: none;
-}
-
-.ListMng{
-	max-width: 30%;
 }
 
 .linkBtn {
