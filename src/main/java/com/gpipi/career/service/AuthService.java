@@ -1,5 +1,10 @@
 package com.gpipi.career.service;
 
-public class AuthService {
+import org.springframework.stereotype.Service;
 
+@Service
+public class AuthService {
+	
+	
+	
 }
