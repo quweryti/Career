@@ -15,57 +15,40 @@
 	background-color: #00ff00;
 }
 
-.linkList {
-	
-}
-
-.linkTitle {
-	
-}
-
-.linkBtnGroup {
-	
-}
-
-.linkBtn {
-	
-}
-
-.followList {
-	
-}
-
-.followTitle {
-	
-}
-
-.followBtnGroup {
-	
-}
-
-.followBtn {
-	
-}
-
-.link-list .btn-group {
+.link-list {
+	border: 2px solid #ccc;
+	margin-top: 20%;
+	padding: 10px;
+	border-radius: 20%;
+	font-size: 35px;
+	text-align: center;
+	max-width: none;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 10px;
-	/*margin-top: 10px;*/
 }
 
-.link-list {
-	margin-top: 20%;
-	border: 2px solid #ccc;
-	padding: 10px;
-	font-size: 35px;
-	text-align: center;
-	border-radius: 20%;
-	max-width: none;
+.link-title {
+	
 }
 
-.follow-list .btn-group {
+.link-btnGroup {
+	width: calc(25% - 20px);
+	max-width: 80px;
+	height: 60px;
+	background-color: aquamarine;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+	margin: 5px;
+	cursor: pointer;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
+
+.link-btn {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -79,24 +62,20 @@
 	border-radius: 20px;
 	font-size: 35px;
 	text-align: center;
-	border-radius: 20%;
+	border-radius: 20%;	/* 多分消す(may be delete) */
 	max-width: none;
 	margin-bottom: 20%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
 }
 
-.linkBtn {
-	width: calc(25% - 20px);
-	max-width: 80px;
-	height: 60px;
-	background-color: aquamarine;
-	border-radius: 10px;
-	border: none;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-	margin: 5px;
-	cursor: pointer;
+.follow-title {
+	
 }
 
-.follow-listbtn {
+.follow-btnGroup {
 	width: calc(25% - 20px);
 	max-width: 80px;
 	height: 60px;
@@ -106,4 +85,16 @@
 	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 	margin: 5px;
 	cursor: pointer;
+}
+
+.follow-btn {
+	
+}
+
+.linkBtn {
+
+}
+
+.follow-listbtn {
+
 }

@@ -17,11 +17,11 @@ public class MemberJoinForm {
 	@Email(message = "有効なE-mailを入力してください")
 	private String memberEmail;
 	
-	@NotBlank(message = "")
+	@NotBlank(message = "パスワードを入力してください")
 	@Size(min = 8, max = 24, message = "パスワードは8文字以上24文字以内で設定してください")
 	private String memberPassword;
 	
-	@NotBlank(message = "確認用パスワードを入力してください")
+	@NotBlank(message = "再度パスワードを入力してください")
 	private String confirmMemberPassword;
 	
 }
