@@ -1,13 +1,11 @@
-/*
- * 
- * version
- * 	   1.0.1
- * date
- *     2025/04/30
- * creater
- *     Nakamura
- * 
- */ 
+/**
+ * File:    loadLayout.js
+ * Purpose: 
+ *
+ * @since   2025/04/30
+ * @version 1.0.0
+ * @author  中村
+ */
 
 document.addEventListener("DOMContentLoaded", () => {
 	fetch("/layout.html")

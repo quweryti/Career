@@ -1,12 +1,11 @@
-/*
- * version
- *	1.0.3
- * date
- *	2025/05/02
- * create
- *	Nakanura
+/*!
+ * File:    side.css
+ * Purpose: サイト共通のサイドスタイル定義です。
+ * Since:   2025/05/02
+ * Version: 1.0.0
+ * Author:  中村
  */
-
+ 
 .side{
 	position: absolute;
 	right: 50%;
@@ -53,7 +52,7 @@
 	max-width: none;
 }
 
-.linkBtn {
+.link-btn {
 	width: calc(25% - 20px);
 	height: 60px;
 	margin: 5px;

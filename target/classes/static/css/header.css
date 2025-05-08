@@ -1,12 +1,10 @@
-/*
- * version
- * 	1.0.2
- * date
- * 	2025/05/02
- * create
- *	Nakamura 
- *	Kwon
- */ 
+/*!
+ * File:    header.css
+ * Purpose: サイト共通のヘッダースタイルを定義します。
+ * Since:   2025/05/02
+ * Version: 1.0.0
+ * Author:  中村、Kwon Yujin
+ */
 
  .header {
 	position: absolute;

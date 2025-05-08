@@ -1,14 +1,10 @@
-/* 
+/**
  * PageTemplate
- * 	return a view root
+ * 	受け取ったアドレスを実際のHTMLページのパスにマッピングします。
  * 
- * version
- * 	1.0.0
- * date
- * 	2025/05/01
- * 
- * create
- *  Kwon Yujin
+ * @since	2025/05/01
+ * @version	1.0.0
+ * @author	Kwon Yujin
  */
 
 package com.gpipi.career.config;
@@ -17,7 +13,7 @@ import java.util.Optional;
 
 public enum PageTemplate {
 	MAIN("main/main"),
-	MEMBER_JOIN("main/memberjoin");
+	JOIN("main/memberjoin");
 	
 	private final String viewPath;
 	
