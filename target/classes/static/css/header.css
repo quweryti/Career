@@ -9,11 +9,10 @@
  */ 
 
  .header {
-	position: absolute;
 	top: 0%;
 	left: 0%;
 	width: 100%;
-	z-index: 10;	/* 最前面に持ってくる(Bring this element to the front) */
+	z-index: 2;	/* 最前面に持ってくる(Bring this element to the front) */
 	background-color: aqua;
  }
  

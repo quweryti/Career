@@ -1,100 +1,63 @@
 /*
  * version
- *	1.0.3
+ *  1.0.4
  * date
- *	2025/05/02
- * create
- *	Nakanura
+ *  2025/05/07
+ * update
+ *  Nakanura + ChatGPT
  */
 
-.side{
-	left: 0%;
-	right: 50%;
- 	max-width: 30%;
-	position: absolute;
-	background-color: #00ff00;
+.side {
+    left: 0%;
+    right: 50%;
+    max-width: 30%;
+    position: absolute;
+    background-color: #00ff00;
+    z-index: 3;
+    height: 738px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-.link-list {
-	border: 2px solid #ccc;
-	margin-top: 20%;
-	padding: 10px;
-	border-radius: 20%;
-	font-size: 35px;
-	text-align: center;
-	max-width: none;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 10px;
+.link-list, .follow-list {
+    border: 2px solid #ccc;
+    margin-top: 20%;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: none;
+    margin-bottom: 20%;
 }
 
-.link-title {
-	
+.link-title, .follow-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.link-btnGroup {
-	width: calc(25% - 20px);
-	max-width: 80px;
-	height: 60px;
-	background-color: aquamarine;
-	border-radius: 10px;
-	border: none;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-	margin: 5px;
-	cursor: pointer;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 10px;
+.link-btnGroup, .follow-btnGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
-.link-btn {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 10px;
+.link-btn, .follow-btn {
+    width: calc(25% - 20px);
+    max-width: 80px;
+    height: 60px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.follow-list {
-	border: 2px solid #ccc;
-	margin-top: 20%;
-	padding: 10px;
-	border-radius: 20px;
-	font-size: 35px;
-	text-align: center;
-	border-radius: 20%;	/* 多分消す(may be delete) */
-	max-width: none;
-	margin-bottom: 20%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 10px;
-}
-
-.follow-title {
-	
-}
-
-.follow-btnGroup {
-	width: calc(25% - 20px);
-	max-width: 80px;
-	height: 60px;
-	background-color: #e8aee0;
-	border-radius: 10px;
-	border: none;
-	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-	margin: 5px;
-	cursor: pointer;
-}
-
+/* follow-btnだけ色変更 */
 .follow-btn {
-	
-}
-
-.linkBtn {
-
-}
-
-.follow-listbtn {
-
+    background-color: #e8aee0;
 }

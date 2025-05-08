@@ -9,20 +9,18 @@
 
 body {		/*　画面全体のレイアウト(Layout for the entire screen)　*/
 	display: grid;
-	gap: 20px;
+	margin: 0;
 	font-family: sans-serif;
 }
 
 .main {
-    position: relative;
+    position: absolute;
     background-color: lightsalmon;
-    /* bottom: 0%; */
-    grid-area: none;
-    /* right: -81%; */
-    /* transform: translateY(300%); */
-    padding: 22%;
-    /* margin-top: -11%; */
-    transform: translateX(-80%);
+    right: 0%;
+    /* transform: translateX(-80%); */
     text-align: center;
-    transform: translateY(50%);
+    /* transform: translateY(50%); */
+    width: 100%;
+    height: 100%;
+	z-index: 1;
 }
