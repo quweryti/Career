@@ -1,0 +1,35 @@
+<!--
+	File:		career.html
+	Purpose: 
+	Since:		2025/04/28
+	Version:	1.0.0
+	Author:		Kwon Yujin
+	
+	@see index.html
+  -->
+<head xmlns:th="http://www.thymeleaf.org" th:fragment="head(title, css, javascript)">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- title -->
+	<title th:text="${title}"></title>
+	<!-- css -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" th:href="@{/css/layout.css}">
+	<link rel="stylesheet" th:href="@{/css/header.css}">
+	<link rel="stylesheet" th:href="@{/css/side.css}">
+	<link rel="stylesheet" th:href="@{/css/footer.css}">
+	<!-- 動的css -->
+	<th:block th:if="${css}">
+		<th:block th:each="url : ${css}">
+			<link rel="stylesheet" th:href="@{${url}}"/>
+		</th:block>
+	</th:block>
+	<!-- javascript -->
+	<script th:src="@{/js/layout.js}"></script>
+	<!-- 動的javascript -->
+	<th:block th:if="${javascript}">
+		<th:block th:each="url : ${javascript}">
+			<script th:src="@{${url}}"></script>
+		</th:block>
+	</th:block>
+</head>

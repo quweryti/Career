@@ -11,9 +11,18 @@ package com.gpipi.career.page;
 
 public interface PageTemplateResolver {
 	/*
-	 * @param pageKey ex) "MAIN", "MEMBER_JOIN"
+	 * @param pageKey ex) "MAIN", "JOIN"
 	 * @return real thymeleaf templates root(ex: "main/main")
 	 * @throws IllegalArgumentException -> ACCEPT DENIED
 	 */
 	String resolve(String pageKey);
+	
+	default String forwardView(String pageKey) {
+		return "forward:/views/" + pageKey;
+	}
+	
+	default String redirectView(String pageKey) {
+		return "redirect:/views/" + pageKey;
+	}
+
 }
