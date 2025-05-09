@@ -1,5 +1,7 @@
 package com.gpipi.career.service;
 
-public class FollowService {
+import com.gpipi.career.domain.vo.FollowInfo;
 
+public class FollowService {
+	
 }
