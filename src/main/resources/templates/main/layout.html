@@ -1,0 +1,24 @@
+<!--
+    version
+        1.0.1
+    date
+        2025/04/28
+	create
+		Kwon Yujin
+  -->
+
+<!-- templates/main/layout.html -->
+<body xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+	<!-- header -->
+	<div th:replace="fragments/header :: siteHeader"></div>
+	<!-- side -->
+	<div th:replace="fragments/side :: siteSide"></div>
+	
+	<!-- main -->
+	<main class="main">
+		<div th:insert="${content} :: siteMain"></div>
+	</main>
+	
+	<!-- footer -->
+	<div th:replace="fragments/footer :: siteFooter"></div>
+</body>

@@ -1,0 +1,74 @@
+/*
+ * version
+ * 	1.0.2
+ * date
+ * 	2025/05/02
+ * create
+ *	Nakamura 
+ *	Kwon
+ */ 
+
+ .header {
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	z-index: 2;	/* 最前面に持ってくる(Bring this element to the front) */
+	background-color: aqua;
+ }
+ 
+.profile-area {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.profile-box {
+	    background-color: #fff;
+	    border: 2px solid #999;
+	    border-radius: 20px;
+	    padding: 10px 15px;
+	    width: 300px;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: flex-end;
+	    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-and-icon {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.search-form {
+	display: flex;
+	flex: 1;
+	gap: 5px;
+} 
+
+.search-form input[type="text"] {
+	flex: 1;
+	padding: 5px;
+	font-size: 14px;
+}
+
+.search-form input[type="submit"] {
+	padding: 5px 10px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.profile-icon {
+	width: 30px;
+	height: 30px;
+	border: 2px solid #000;
+	border-radius: 50%;
+	background-color: #eee;
+}
+
+.profile-label {
+	text-align: right;
+	font-size: 12px;
+	margin-top: 5px;
+}

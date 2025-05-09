@@ -1,0 +1,26 @@
+<!--
+	version
+		1.0.1
+	date
+		2025/04/28
+	create
+		Nakamura
+		Kwon Yujin
+  -->
+
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="siteHeader" class="header">
+	<div class="profile-area">
+		<div class="profile-box">
+			<div class="search-and-icon">
+				<!-- プロフィール検索 -->
+				<form class="search-form" action="/search/user" method="get">
+					<input type="text" name="query" placeholder="検索" style=width:100%; />
+					<input type="submit" value="search" />
+				</form>
+				<!-- プロフィール -->
+				<div class="profile-icon"></div>
+			</div>
+				<div class="profile-label"></div>
+		</div>
+	</div>
+</div>
