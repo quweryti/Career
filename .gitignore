@@ -2,39 +2,39 @@
 # Maven
 # ─────────────────────────────────────────────────
 target/
-/target/                             # Maven 빌드 아티팩트 전체
-**/target/                           # 서브모듈의 target/ 도 포함
-*.class                              # 혹시 남은 .class 파일
-/build/                              # Gradle 빌드 아티팩트 (NetBeans 등)
-bin/
-/bin/                                # Eclipse 빌드 출력
-!/.mvn/wrapper/maven-wrapper.jar     # Maven Wrapper JAR (예외로 남김)
+/target/
+**/target/
+*.class
+/build/
+bin
+/bin/
+!/.mvn/wrapper/maven-wrapper.jar
 
 # ─────────────────────────────────────────────────
 # Eclipse / STS
 # ─────────────────────────────────────────────────
-.classpath                          # Eclipse classpath 설정
-.project                            # Eclipse project 파일
-.settings/                          # Eclipse project 설정 디렉터리
-.springBeans                        # STS Spring Beans 뷰 설정
-.sts4-cache/                        # STS 캐시
-.factorypath                        # Annotation Processor 설정
-.apt_generated/                     # APT generated 코드
-bin/                                # Eclipse 빌드 출력 폴더
-.m2e-wtp/                           # WTP 관련 메타데이터
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+.factorypath
+.apt_generated/
+bin/
+.m2e-wtp/
 
 # ─────────────────────────────────────────────────
 # IntelliJ IDEA
 # ─────────────────────────────────────────────────
-.idea/                              # IDEA 설정
-*.iml                               # 모듈 파일
+.idea/
+*.iml
 *.iws
 *.ipr
 
 # ─────────────────────────────────────────────────
 # VS Code
 # ─────────────────────────────────────────────────
-.vscode/                            # VS Code 설정
+.vscode/
 .vs/
 
 # ─────────────────────────────────────────────────
@@ -51,16 +51,7 @@ Thumbs.db
 # Node.js 의존성
 /node_modules/
 
-# npm 잠금 파일 (정책에 따라)
-package-lock.json
-
-# 빌드 산출물 (선택)
-/src/main/resources/static/css/
-
-.settings/
-.classpath
-.factorypath
-.project
-
-package.json
-package-lock.json
+# ─────────────────────────────────────────────────
+# anothers
+# ─────────────────────────────────────────────────
+/.externalToolBuilders/
