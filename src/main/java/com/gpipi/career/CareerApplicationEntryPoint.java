@@ -1,14 +1,10 @@
-/* 
+/**
  * CareerApplicationEntryPoint
- * 	entry point
+ * 	アプリケーションのエントリーポイントを担当します。
  * 
- * version
- * 	1.0.0
- * date
- * 	2025/04/23
- * 
- * create
- *  Kwon Yujin
+ * @since	2025/04/23
+ * @version	1.0.0
+ * @author	Kwon Yujin
  */
 package com.gpipi.career;
 

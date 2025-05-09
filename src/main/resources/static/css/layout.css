@@ -1,16 +1,15 @@
-/*
- * version
- *	1.0.3
- * date
- *	2025/05/02
- * create
- *	Nakanura
+/*!
+ * File:    layout.css
+ * Purpose: サイトのレイアウトスタイルを定義します。
+ * Since:   2025/05/02
+ * Version: 1.0.0
+ * Author:  中村、
  */
-
-body {		/*　画面全体のレイアウト(Layout for the entire screen)　*/
+body {		/* 画面全体のレイアウト(Layout for the entire screen) */
 	display: grid;
 	margin: 0;
 	font-family: sans-serif;
+	gap: 20px;
 }
 
 .main {

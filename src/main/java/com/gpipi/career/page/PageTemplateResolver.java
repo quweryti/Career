@@ -1,14 +1,10 @@
-/* 
+/**
  * PageTemplateResolver
- * 	return a view root
- * 
- * version
- * 	1.0.0
- * date
- * 	2025/05/01
- * 
- * create
- *  Kwon Yujin
+ * 	入力されたアドレスに対応するHTMLページの実際のパスを取得して返します。
+ * @see		PageTemplateResolverImpl.java
+ * @since	2025/05/01
+ * @version	1.0.0
+ * @author	Kwon Yujin
  */
 
 package com.gpipi.career.page;

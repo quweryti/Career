@@ -1,34 +1,52 @@
 <!--
-    version
-        1.0.1
-    date
-        2025/05/01
-	create
-		Kwon Yujin
+	File:    memberjoin.html
+	Purpose: 会員登録フォーム
+	Since:   2025/05/01
+	Version: 1.0.0
+	Author:  Kwon Yujin
+	
+	@see layout.html
   -->
-
 <div xmlns:th="http://www.thymeleaf.org" th:fragment="siteMain">
-  	<div class="formWrapper">
+  	<div class="form-wrapper">
 		<h1>会員新規登録</h1>
 		<form th:action="@{/auth/join}" th:object="${memberForm}" method="post">
 			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-			<div class="memberFormGroup">
+			<div class="member-form-group">
 				<label for="memberName">名前</label>
-				<input type="text" th:field="*{memberName}" placeholder="お名前を入力"/>
+				<input type="text"
+					   th:field="*{memberName}"
+					   placeholder="お名前を入力"/>
+				<p th:if="${#fields.hasErrors('memberName')}" th:errors="*{memberName}"></p>
 			</div>
-			<div class="memberFormGroup">
+			<div class="member-form-group">
 				<label for="memberEmail">E-mail</label>
-				<input type="email" th:field="*{memberEmail}" placeholder="yourEmail@example.com" />
+				<input type="email"
+					   th:field="*{memberEmail}"
+					   placeholder="yourEmail@example.com"
+					   required/>
+					<p th:if="${#fields.hasErrors('memberEmail')}"  th:errors="*{memberEmail}"></p>
 			</div>
-			<div class="memberFormGroup">
+			<div class="member-form-group">
 				<label for="memberPassword">暗証番号</label>
-				<input type="password" th:field="*{memberPassword}" placeholder="パスワード"/>
+				<input type="password"
+					   th:field="*{memberPassword}"
+					   placeholder="パスワード"
+					   pattern="^[A-Za-z0-9!@#$%^&*]{8,24}$"
+					   title="英数字、大文字小文字、数字、特殊文字（!、@、#、$、%、^、&、*）を含む8〜24文字で設定してください"/>
+					<p th:if="${#fields.hasErrors('memberPassword')}"  th:errors="*{memberPassword}"></p>
 			</div>
-			<div class="memberFormGroup">
+			<div class="member-form-group">
 				<label for="confirmMemberPassword">暗証番号確認</label>
-				<input type="password" th:field="*{confirmMemberPassword}" placeholder="もう一度入力"/>
+				<input type="password"
+					   th:field="*{confirmMemberPassword}"
+					   placeholder="もう一度入力"
+					   pattern="^[A-Za-z0-9!@#$%^&*]{8,24}$"
+					   title="先ほどと同じパスワードを入力してください"/>				
+					<p th:if="${#fields.hasErrors('confirmMemberPassword')}"  th:errors="*{confirmMemberPassword}"></p>
+					<p th:if="${#fields.hasGlobalErrors()}" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
 			</div>
-			<div class="memberFormGroup">
+			<div class="member-form-group">
 				<input type="submit" value="申し込み" />
 			</div>
 		</form>

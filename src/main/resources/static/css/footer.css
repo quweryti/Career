@@ -1,12 +1,10 @@
-/*
- * version
- *	1.0.1
- * date
- *	2025/05/02
- * create
- *	Nakanura
+/*!
+ * File:    footer.css
+ * Purpose: サイト共通のフッタースタイルの定義です。
+ * Since:   2025/05/02
+ * Version: 1.0.0
+ * Author:  中村
  */
-
  .footer {
      position: fixed;
      bottom: 0%;

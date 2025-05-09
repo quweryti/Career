@@ -1,14 +1,10 @@
-/* 
+/**
  * PageTemplateResolverImpl
- * 	return a view root
- * 
- * version
- * 	1.0.0
- * date
- * 	2025/05/01
- * 
- * create
- *  Kwon Yujin
+ * 	説明なし
+ * @see		PageTemplateResolver.java
+ * @since	2025/05/01
+ * @version	1.0.0
+ * @author	Kwon Yujin
  */
 
 package com.gpipi.career.page;
