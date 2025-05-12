@@ -6,7 +6,6 @@
  * @version	1.0.0
  * @author	Kwon Yujin
  */
-
 package com.gpipi.career.web.controller;
 
 import org.springframework.stereotype.Controller;
@@ -29,7 +28,7 @@ public class AuthController {
 	
 	private final PageTemplateResolver resolver;
 	private final AuthService authService;
-	
+
 	public AuthController(PageTemplateResolver resolver, AuthService authService) {
 		this.resolver = resolver;
 		this.authService = authService;
@@ -51,10 +50,14 @@ public class AuthController {
 															BindingResult br,
 															Model model,
 															RedirectAttributes ra) {
+		// validate
 		if(br.hasErrors()) {
-			return resolver.resolve("join");
+			String viewPath = resolver.resolve("join");
+			model.addAttribute("content", viewPath);
+			return "index";
 		}
-		return null;
+		// 
+		return resolver.redirectView("main");
 	}
-	
+
 }

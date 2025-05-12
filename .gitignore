@@ -8,13 +8,10 @@ target/
 /build/
 bin
 /bin/
-!/.mvn/wrapper/maven-wrapper.jar
 
 # ─────────────────────────────────────────────────
 # Eclipse / STS
 # ─────────────────────────────────────────────────
-.classpath
-.project
 .settings/
 .springBeans
 .sts4-cache/
@@ -22,14 +19,6 @@ bin
 .apt_generated/
 bin/
 .m2e-wtp/
-
-# ─────────────────────────────────────────────────
-# IntelliJ IDEA
-# ─────────────────────────────────────────────────
-.idea/
-*.iml
-*.iws
-*.ipr
 
 # ─────────────────────────────────────────────────
 # VS Code
@@ -51,7 +40,7 @@ Thumbs.db
 # Node.js 의존성
 /node_modules/
 
-# ─────────────────────────────────────────────────
-# anothers
-# ─────────────────────────────────────────────────
 /.externalToolBuilders/
+.stylelintrc.js
+package.json
+package-lock.json

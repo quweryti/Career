@@ -35,4 +35,5 @@ public enum PageTemplate {
 			return Optional.empty();
 		}
 	}
+
 }

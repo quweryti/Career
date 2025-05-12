@@ -5,22 +5,11 @@
 	Version: 1.0.0
 	Author:  中村、Kwon Yujin
 	
-	@see: index.html
+	@see index.html
   -->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Your Career</title>
-	<link rel = "stylesheet" th:href = "@{/css/footer.css}">
-	<link rel = "stylesheet" th:href = "@{/css/header.css}">
-	<link rel = "stylesheet" th:href = "@{/css/layout.css}">
-	<link rel = "stylesheet" th:href = "@{/css/side.css}">
-	<link rel = "stylesheet" th:href = "@{/css/style.css}">
-</head>
-		
-<body th:replace="~{main/layout :: layout(content=${content})}">
-</body>
-
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="fragments/head :: head(${title}, ${css}, ${javascript})"></head>
+<body th:replace="~{main/layout :: layout(content=${content})}"></body>
 </html>
