@@ -39,3 +39,8 @@ Thumbs.db
 
 # Node.js 의존성
 /node_modules/
+
+/.externalToolBuilders/
+.stylelintrc.js
+package.json
+package-lock.json
