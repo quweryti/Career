@@ -6,10 +6,10 @@
  * @version	1.0.0
  * @author	Nakamura
  */
-package com.gpipi.career.controller;
+package com.gpipi.career.web.controller;
 
 import com.gpipi.career.service.FollowService;
-import com.gpipi.career.domain.vo.FollowInfoVO;
+import com.gpipi.career.domain.vo.FollowInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +24,7 @@ public class FollowController {
 
     @GetMapping("/side")
     public String getSidebar(Model model) {
-        List<FollowInfoVO> followList = followService.getFollowList();
+        List<FollowInfoVo> followList = followService.getFollowList();
         model.addAttribute("followList", followList);
         return "side";
     }

@@ -8,12 +8,12 @@
  */
 package com.gpipi.career.service;
 
-import com.gpipi.career.dao.FollowDAO;
+import com.gpipi.career.dao.FollowDao;
 import com.gpipi.career.domain.vo.FollowInfoVo;
 import java.util.List;
 
 public class FollowService {
-	List<FollowDAO> getFollowList() {
+	public List<FollowDao> getFollowList() {
 		return null;
 	}
 }
