@@ -52,7 +52,9 @@ public class AuthController {
 															RedirectAttributes ra) {
 		// validate
 		if(br.hasErrors()) {
-			return resolver.forwardView("join");
+			String viewPath = resolver.resolve("join");
+			model.addAttribute("content", viewPath);
+			return "index";
 		}
 		// 
 		return resolver.redirectView("main");

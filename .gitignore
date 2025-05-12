@@ -14,7 +14,6 @@ bin
 # Eclipse / STS
 # ─────────────────────────────────────────────────
 .classpath
-.project
 .settings/
 .springBeans
 .sts4-cache/
