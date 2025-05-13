@@ -50,14 +50,16 @@ public class AuthController {
 															BindingResult br,
 															Model model,
 															RedirectAttributes ra) {
-		// validate
+		// 데이터 입력값 유효성 검사
 		if(br.hasErrors()) {
 			String viewPath = resolver.resolve("join");
 			model.addAttribute("content", viewPath);
-			model.addAttribute("memberForm", form);
 			return "index";
 		}
-		// 
+		// 회원 등록
+		authService.registerMember(form.toRequestDto());
+		// 등록 성공 메시지
+		ra.addFlashAttribute("joinSuccess", "会員登録完了");
 		return resolver.redirectView("main");
 	}
 

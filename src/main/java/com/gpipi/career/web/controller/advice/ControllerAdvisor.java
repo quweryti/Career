@@ -11,18 +11,18 @@ package com.gpipi.career.web.controller.advice;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import com.gpipi.career.web.controller.AuthController;
 import com.gpipi.career.web.dto.MemberJoinForm;
 
 import jakarta.servlet.http.HttpServletRequest;
 
 @ControllerAdvice("com.gpipi.career.web.controller")
-public class ControllerAdvicer {
+public class ControllerAdvisor {
 	
-	// 여긴 아마 삭제 할 듯?
 	@ModelAttribute("memberForm")
 	public MemberJoinForm memberForm(HttpServletRequest request) {
 		String uri = request.getRequestURI();
-		if(uri.endsWith("/views/join")) {
+		if(uri.endsWith("/views/join") || uri.endsWith("/auth/join")) {
 			return new MemberJoinForm();
 		}
 		return null;

@@ -7,13 +7,14 @@
  * @author	Kwon Yujin
  */
 
-package com.gpipi.career.page;
+package com.gpipi.career.page.implement;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.gpipi.career.config.PageTemplate;
+import com.gpipi.career.page.PageTemplateResolver;
 
 @Component
 public class PageTemplateResolverImpl implements PageTemplateResolver {
