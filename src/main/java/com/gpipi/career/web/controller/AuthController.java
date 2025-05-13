@@ -54,6 +54,7 @@ public class AuthController {
 		if(br.hasErrors()) {
 			String viewPath = resolver.resolve("join");
 			model.addAttribute("content", viewPath);
+			model.addAttribute("memberForm", form);
 			return "index";
 		}
 		// 

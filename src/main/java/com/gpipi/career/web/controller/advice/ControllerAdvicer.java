@@ -16,8 +16,9 @@ import com.gpipi.career.web.dto.MemberJoinForm;
 import jakarta.servlet.http.HttpServletRequest;
 
 @ControllerAdvice("com.gpipi.career.web.controller")
-public class ViewControllerAdvice {
+public class ControllerAdvicer {
 	
+	// 여긴 아마 삭제 할 듯?
 	@ModelAttribute("memberForm")
 	public MemberJoinForm memberForm(HttpServletRequest request) {
 		String uri = request.getRequestURI();

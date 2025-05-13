@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.gpipi.career.page.PageTemplateResolver;
+import com.gpipi.career.web.dto.MemberJoinForm;
 
 @Controller
 @RequestMapping("/views")
@@ -41,6 +42,7 @@ public class ViewController {
 		try {
 			String viewPath = resolver.resolve(pageKey);
 			model.addAttribute("content", viewPath);
+			// controller advicer에 객체 생성 부분 넣기
 			return "index";
 		} catch (IllegalArgumentException ex) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Page not found : " + pageKey);

@@ -6,7 +6,6 @@
  * @version	1.0.0
  * @author	Kwon Yujin
  */
-
 package com.gpipi.career.web.validator;
 
 import jakarta.validation.ConstraintValidator;

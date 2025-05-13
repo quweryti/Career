@@ -48,5 +48,5 @@ public class MemberJoinForm {
 				this.memberPassword
 		);
 	}
-	
+
 }
