@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.gpipi.career.page.PageTemplateResolver;
+import com.gpipi.career.web.dto.MemberJoinForm;
 
 @Controller
 @RequestMapping("/views")

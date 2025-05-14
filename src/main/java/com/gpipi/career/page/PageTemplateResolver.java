@@ -9,6 +9,8 @@
 
 package com.gpipi.career.page;
 
+import com.gpipi.career.page.implement.PageTemplateResolverImpl;
+
 public interface PageTemplateResolver {
 	/*
 	 * @param pageKey ex) "MAIN", "JOIN"

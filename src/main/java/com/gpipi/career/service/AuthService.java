@@ -1,10 +1,17 @@
+/**
+ * AuthService
+ * 	
+ * 
+ * @since	2025/05/13
+ * @version	1.0.0
+ * @author	Kwon Yujin
+ */
 package com.gpipi.career.service;
 
-import org.springframework.stereotype.Service;
+import com.gpipi.career.service.dto.MemberJoinRequestDto;
 
-@Service
-public class AuthService {
-	
-	
-	
+public interface AuthService {
+	// 신규 회원 등록
+	void registerMember(MemberJoinRequestDto requestDto);
+
 }
