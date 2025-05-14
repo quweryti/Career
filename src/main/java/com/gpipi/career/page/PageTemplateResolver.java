@@ -6,10 +6,7 @@
  * @version	1.0.0
  * @author	Kwon Yujin
  */
-
 package com.gpipi.career.page;
-
-import com.gpipi.career.page.implement.PageTemplateResolverImpl;
 
 public interface PageTemplateResolver {
 	/*
