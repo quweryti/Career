@@ -6,14 +6,14 @@
  * @version	1.0.0
  * @author	Kwon Yujin
  */
-
 package com.gpipi.career.config;
 
 import java.util.Optional;
 
 public enum PageTemplate {
 	MAIN("main/main"),
-	JOIN("main/memberjoin");
+	JOIN("main/memberjoin"),
+	JOINSUCCESS("main/joinsuccess");
 	
 	private final String viewPath;
 	

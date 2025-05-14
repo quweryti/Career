@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gpipi.career.page.PageTemplateResolver;
 import com.gpipi.career.service.AuthService;
+import com.gpipi.career.service.exception.DuplicateMemberException;
 import com.gpipi.career.web.dto.MemberJoinForm;
 
 import jakarta.validation.Valid;
@@ -50,17 +51,23 @@ public class AuthController {
 															BindingResult br,
 															Model model,
 															RedirectAttributes ra) {
+		String viewPath = resolver.resolve("join");
 		// 데이터 입력값 유효성 검사
 		if(br.hasErrors()) {
-			String viewPath = resolver.resolve("join");
 			model.addAttribute("content", viewPath);
 			return "index";
 		}
 		// 회원 등록
-		authService.registerMember(form.toRequestDto());
+		try {
+			authService.registerMember(form.toRequestDto());
+		} catch(DuplicateMemberException ex) {
+			br.rejectValue("memberEmail", "duplicate", ex.getMessage());
+			model.addAttribute("content", viewPath);
+			return "index";
+		}
 		// 등록 성공 메시지
 		ra.addFlashAttribute("joinSuccess", "会員登録完了");
-		return resolver.redirectView("main");
+		return resolver.redirectView("joinsuccess");
 	}
 
 }
