@@ -32,7 +32,7 @@ public class Member {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long member_id;
 	@Column(name="name", nullable = false, length = 100)
 	private String name;
 	@Column(name="email", nullable = false, length = 200)
