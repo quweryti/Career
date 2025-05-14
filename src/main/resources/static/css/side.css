@@ -41,7 +41,7 @@
     gap: 10px;
 }
 
-.link-btn, .follow-btn {
+.link-btn, .follow-btn {        /* type miss care × followBtn 〇 follow-btn */
     width: calc(25% - 20px);
     max-width: 80px;
     height: 60px;
