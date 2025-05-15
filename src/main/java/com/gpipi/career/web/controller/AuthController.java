@@ -16,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gpipi.career.domain.entity.Member;
@@ -31,6 +32,7 @@ import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/auth")
+@SessionAttributes("member")
 public class AuthController {
 	
 	private final PageTemplateResolver resolver;
@@ -62,19 +64,12 @@ public class AuthController {
 		try {
 			Member member = authService.login(form.toRequestDto());
 			// principal wrapping
-			MemberPrincipal principal = new MemberPrincipal(member);
+			// MemberPrincipal principal = new MemberPrincipal(member);
 			// create token
-			UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(principal, null, principal.getAuthorities());
+			// UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(principal, null, principal.getAuthorities());
 			// restore security context
-			SecurityContextHolder.getContext().setAuthentication(auth);
-			// test log
-			System.out.println("login success!");
-			System.out.println("Welcome! " + principal.getMember().getName());
-			System.out.println("your email address is " + principal.getMember().getEmail());
-			System.out.println("your password is " + principal.getMember().getPassword());
-			System.out.println("your sign up date is " + principal.getMember().getSignupDate());
-			System.out.println("your member id is " + principal.getMember().getMember_id());
-			System.out.println("your delete status is " + principal.getMember().getIsDeleted());
+			// SecurityContextHolder.getContext().setAuthentication(auth);
+			model.addAttribute("member", member);
 		} catch(LoginFailedException ex) {
 			br.reject("err", "メールアドレスまたはパスワードが正しくありません");
 			model.addAttribute("content", viewPath);
