@@ -11,7 +11,7 @@ package com.gpipi.career.web.controller.advice;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.gpipi.career.web.controller.AuthController;
+import com.gpipi.career.web.dto.LoginForm;
 import com.gpipi.career.web.dto.MemberJoinForm;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,4 +28,13 @@ public class ControllerAdvisor {
 		return null;
 	}
 	
+	@ModelAttribute("loginForm")
+	public LoginForm loginForm(HttpServletRequest request) {
+		String uri = request.getRequestURI();
+		if(uri.endsWith("/views/login") || uri.endsWith("/auth/login")) {
+			return new LoginForm();
+		}
+		return null;
+	}
+
 }

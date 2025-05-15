@@ -28,7 +28,7 @@
 					<p th:if="${#fields.hasErrors('memberEmail')}"  th:errors="*{memberEmail}"></p>
 			</div>
 			<div class="member-form-group">
-				<label for="memberPassword">暗証番号</label>
+				<label for="memberPassword">パスワード</label>
 				<input type="password"
 					   th:field="*{memberPassword}"
 					   placeholder="パスワード"
@@ -37,7 +37,7 @@
 					<p th:if="${#fields.hasErrors('memberPassword')}"  th:errors="*{memberPassword}"></p>
 			</div>
 			<div class="member-form-group">
-				<label for="confirmMemberPassword">暗証番号確認</label>
+				<label for="confirmMemberPassword">パスワード確認</label>
 				<input type="password"
 					   th:field="*{confirmMemberPassword}"
 					   placeholder="もう一度入力"

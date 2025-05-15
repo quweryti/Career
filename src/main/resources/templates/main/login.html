@@ -1,0 +1,31 @@
+<!--
+	File:    login.html
+	Purpose: 
+	Since:   2025/05/15
+	Version: 1.0.0
+	Author:  Kwon Yujin
+	
+	@see layout.html
+  -->
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="siteMain">
+	<div>
+		<h1>ログイン</h1>
+		<form th:action="@{/auth/login}" th:object="${loginForm}" method="post">
+			<sec:csrfInput/>
+			<div>
+				<label for="memberEmail">E-mail</label>
+				<input type="email" th:field="*{memberEmail}" placeholder="your-email@example.com"/>
+			</div>
+			<div>
+				<label for="memberPassword">パスワード</label>
+				<input type="password" th:field="*{memberPassword}" placeholder="パスワード"/>
+			</div>
+			<div>
+				<p th:if="${#fields.hasGlobalErrors()}" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
+			</div>
+			<div>
+				<input type="submit" value="ログイン"/>
+			</div>
+		</form>
+	</div>
+</div>

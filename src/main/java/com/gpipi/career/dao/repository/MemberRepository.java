@@ -6,7 +6,9 @@
  * @version	1.0.0
  * @author	Kwon Yujin
  */
-package com.gpipi.career.dao;
+package com.gpipi.career.dao.repository;
+
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -15,5 +17,7 @@ import com.gpipi.career.domain.entity.Member;
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
 	boolean existsByEmail(String email);
+
+	Optional<Member> findByEmail(String email);
 
 }

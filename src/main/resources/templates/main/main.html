@@ -5,12 +5,16 @@
 	Version: 1.0.0
 	Author:  Kwon Yujin
 	
-	@see: layout.html
+	@see layout.html
   -->
-
 <div xmlns:th="http://www.thymeleaf.org" th:fragment="siteMain">
-  	<h1>Hello, World!</h1>
+  	<h1>Career</h1>
 	<div>
-		<a th:href="@{join}">新規会員登録</a>
+		<div>
+			<a th:href="@{/views/login}">ログイン</a>
+		</div>
+		<div>
+			<a th:href="@{/views/join}">新規会員登録</a>
+		</div>
 	</div>
 </div>

@@ -13,7 +13,8 @@ import java.util.Optional;
 public enum PageTemplate {
 	MAIN("main/main"),
 	JOIN("main/memberjoin"),
-	JOINSUCCESS("main/joinsuccess");
+	JOINSUCCESS("main/joinsuccess"),
+	LOGIN("main/login");
 	
 	private final String viewPath;
 	

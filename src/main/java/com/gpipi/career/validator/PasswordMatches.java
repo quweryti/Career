@@ -6,7 +6,7 @@
  * @version	1.0.0
  * @author	Kwon Yujin
  */
-package com.gpipi.career.web.validator;
+package com.gpipi.career.validator;
 // 1. 표준 메타 애노테이션 imports
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

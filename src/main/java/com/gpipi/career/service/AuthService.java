@@ -8,10 +8,16 @@
  */
 package com.gpipi.career.service;
 
+import com.gpipi.career.domain.entity.Member;
+import com.gpipi.career.service.dto.LoginRequestDto;
 import com.gpipi.career.service.dto.MemberJoinRequestDto;
 
 public interface AuthService {
+	
+	// 로그인
+	Member login(LoginRequestDto requestDto);
+	
 	// 신규 회원 등록
-	void registerMember(MemberJoinRequestDto requestDto);
-
+	void register(MemberJoinRequestDto requestDto);
+	
 }

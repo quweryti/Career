@@ -6,11 +6,10 @@
  * @version	1.0.0
  * @author	Kwon Yujin
  */
-
 package com.gpipi.career.web.dto;
 
 import com.gpipi.career.service.dto.MemberJoinRequestDto;
-import com.gpipi.career.web.validator.PasswordMatches;
+import com.gpipi.career.validator.PasswordMatches;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

@@ -6,10 +6,12 @@
  * @version	1.0.0
  * @author	Kwon Yujin
  */
-package com.gpipi.career.service.exception;
+package com.gpipi.career.exception;
 
 public class DuplicateMemberException extends RuntimeException {
+	
 	public DuplicateMemberException(String email) {
-		super("既に登録されたE-mailです。");
+		super("既に登録されたE-mailです");
 	}
+	
 }

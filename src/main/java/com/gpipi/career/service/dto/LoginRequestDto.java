@@ -1,10 +1,10 @@
 /**
- * MemberJoinRequestDto
+ * LoginRequestDto
  * 	
- * @see		MemberJoinForm.java
+ * @see		LoginForm.java
  * 			AuthService.java
  * 			AuthDao.java
- * @since	2025/04/23
+ * @since	2025/05/15
  * @version	1.0.0
  * @author	Kwon Yujin
  */
@@ -15,9 +15,8 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public class MemberJoinRequestDto {
-	
-	private final String memberName;
+public class LoginRequestDto {
+
 	private final String memberEmail;
 	private final String memberPassword;
 	
