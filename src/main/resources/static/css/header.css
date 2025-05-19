@@ -1,11 +1,12 @@
 /*!
- * File:    header.css
- * Purpose: サイト共通のヘッダースタイルを定義します。
- * Since:   2025/05/02
- * Version: 1.0.0
- * Author:  中村、Kwon Yujin
- */
-
+	File:        header.css
+	Description: サイト共通のヘッダースタイルを定義します。
+	Since:       2025/05/02
+	LastUpdated: 2025/05/16
+	Version:     1.0.0
+	Author:      中村, Kwon Yujin
+	See:         layout.css, career.html
+*/
  .header {
 	position: absolute;
 	top: 0%;

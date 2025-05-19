@@ -1,12 +1,12 @@
 /**
- * LoginForm
- * 	
- * @see		
- * @since	2025/05/15
- * @version	1.0.0
- * @author	Kwon Yujin
+ * LoginForm.java
+ * @since       2025-05-15
+ * @version     1.0.0
+ * @author      Kwon Yujin
+ * @see         com.gpipi.career.service.dto.LoginRequestDto
+ * @see         com.gpipi.career.web.controller.AuthController
  */
-package com.gpipi.career.web.dto;
+package com.gpipi.career.web.form;
 
 import com.gpipi.career.service.dto.LoginRequestDto;
 import com.gpipi.career.service.dto.MemberJoinRequestDto;

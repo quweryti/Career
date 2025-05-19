@@ -1,12 +1,10 @@
 /**
- * MemberJoinRequestDto
- * 	
- * @see		MemberJoinForm.java
- * 			AuthService.java
- * 			AuthDao.java
- * @since	2025/04/23
- * @version	1.0.0
- * @author	Kwon Yujin
+ * MemberJoinRequestDto.java
+ * @since       2025-04-23
+ * @version     1.0.0
+ * @author      Kwon Yujin
+ * @see         com.gpipi.career.web.dto.MemberJoinForm
+ * @see         com.gpipi.career.service.implement.AuthServiceImpl
  */
 package com.gpipi.career.service.dto;
 

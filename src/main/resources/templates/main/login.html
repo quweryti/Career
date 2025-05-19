@@ -1,12 +1,12 @@
 <!--
-	File:    login.html
-	Purpose: 
-	Since:   2025/05/15
-	Version: 1.0.0
-	Author:  Kwon Yujin
-	
-	@see layout.html
-  -->
+  File:        login.html
+  Description: 로그인 폼 페이지 프래그먼트
+  Since:       2025/05/15
+  LastUpdated: 2025/05/16
+  Version:     1.0.0
+  Author:      Kwon Yujin
+  See:         layout.html
+-->
 <div xmlns:th="http://www.thymeleaf.org" th:fragment="siteMain">
 	<div>
 		<h1>ログイン</h1>
@@ -21,7 +21,7 @@
 				<input type="password" th:field="*{memberPassword}" placeholder="パスワード"/>
 			</div>
 			<div>
-				<p th:if="${#fields.hasGlobalErrors()}" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
+				<p th:if="${errorMessage}" th:text="${errorMessage}"></p>
 			</div>
 			<div>
 				<input type="submit" value="ログイン"/>

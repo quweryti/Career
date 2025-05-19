@@ -1,17 +1,16 @@
 /**
- * PasswordMatches
- * 	入力されたパスワードと確認用パスワードが一致しているかを検証します。
- * @see		AuthController.java
- * @since	2025/05/08
- * @version	1.0.0
- * @author	Kwon Yujin
+ * PasswordMatchesValidator.java
+ * @since       2025-05-08
+ * @version     1.0.0
+ * @author      Kwon Yujin
+ * @see         com.gpipi.career.validator.PasswordMatches
  */
 package com.gpipi.career.validator;
 
+import com.gpipi.career.web.form.MemberJoinForm;
+
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-
-import com.gpipi.career.web.dto.MemberJoinForm;
 /**
  * 1) ConstraintValidator<A,T>
  *    - A: 커스텀 애노테이션 클래스

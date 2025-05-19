@@ -1,18 +1,19 @@
 /**
- * ViewControllerAdvice
- * 	
- * 
- * @since	2025/05/09
- * @version	1.0.0
- * @author	Kwon Yujin
+ * ControllerAdvisor.java
+ * @since       2025-05-09
+ * @version     1.0.0
+ * @author      Kwon Yujin
+ * @see         org.springframework.web.bind.annotation.ControllerAdvice
+ * @see         com.gpipi.career.web.dto.LoginForm
+ * @see         com.gpipi.career.web.dto.MemberJoinForm
  */
 package com.gpipi.career.web.controller.advice;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.gpipi.career.web.dto.LoginForm;
-import com.gpipi.career.web.dto.MemberJoinForm;
+import com.gpipi.career.web.form.LoginForm;
+import com.gpipi.career.web.form.MemberJoinForm;
 
 import jakarta.servlet.http.HttpServletRequest;
 

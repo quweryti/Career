@@ -1,16 +1,15 @@
 /**
- * MemberJoinForm
- * 	memberFormオブジェクトを受け取るDTOです。
- * @see		MemberJoinRequestDto.java
- * @since	2025/04/23
- * @version	1.0.0
- * @author	Kwon Yujin
+ * MemberJoinForm.java
+ * @since       2025-04-23
+ * @version     1.0.0
+ * @author      Kwon Yujin
+ * @see         com.gpipi.career.service.dto.MemberJoinRequestDto
+ * @see         com/gpipi.career.validator.PasswordMatches
  */
-package com.gpipi.career.web.dto;
+package com.gpipi.career.web.form;
 
 import com.gpipi.career.service.dto.MemberJoinRequestDto;
 import com.gpipi.career.validator.PasswordMatches;
-
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

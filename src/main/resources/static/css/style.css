@@ -1,11 +1,12 @@
 /*!
- * File:    side.css
- * Purpose: サイト共通のサイドスタイル定義です。
- * Since:   2025/05/02
- * Version: 1.0.0
- * Author:  中村、Kwon Yujin
- */
-
+  File:        style.css
+  Description: サイト共通のサイドスタイル定義です。
+  Since:       2025/05/02
+  LastUpdated: 2025/05/16
+  Version:     1.0.0
+  Author:      中村, Kwon Yujin
+  See:         head.html
+*/
 input{
 	font-size: 20px;
 }

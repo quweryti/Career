@@ -1,11 +1,12 @@
 /*!
- * File:    layout.css
- * Purpose: サイトのレイアウトスタイルを定義します。
- * Since:   2025/05/02
- * Version: 1.0.0
- * Author:  中村、
- */
-
+	File:        layout.css
+	Description: サイトのレイアウトスタイルを定義します。
+	Since:       2025/05/02
+	LastUpdated: 2025/05/16
+	Version:     1.0.0
+	Author:      中村
+	See:         career.html
+*/
 body {		/* 画面全体のレイアウト(Layout for the entire screen) */
 	display: grid;
 	font-family: sans-serif;

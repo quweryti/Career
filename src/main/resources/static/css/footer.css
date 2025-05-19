@@ -1,11 +1,12 @@
 /*!
- * File:    footer.css
- * Purpose: サイト共通のフッタースタイルの定義です。
- * Since:   2025/05/02
- * Version: 1.0.0
- * Author:  中村
+	File:        footer.css
+	Description: サイト共通のフッタースタイルの定義です。
+	Since:       2025/05/02
+	LastUpdated: 2025/05/16
+	Version:     1.0.0
+	Author:      中村
+	See:         layout.css, career.html
  */
-
 .footer {
 	position: fixed;
 	bottom: 0%;

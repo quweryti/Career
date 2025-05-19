@@ -1,10 +1,10 @@
 /**
- * ViewController
- * 	表示するメインページをビューに返します。
- * 
- * @since	2025/04/23
- * @version	1.0.0
- * @author	Kwon Yujin
+ * ViewController.java
+ * @since       2025-04-23
+ * @version     1.0.0
+ * @author      Kwon Yujin
+ * @see         com.gpipi.career.page.PageTemplateResolver
+ * @see         org.springframework.web.server.ResponseStatusException
  */
 package com.gpipi.career.web.controller;
 
@@ -14,38 +14,46 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.gpipi.career.page.PageTemplateResolver;
-import com.gpipi.career.web.dto.MemberJoinForm;
+import com.gpipi.career.config.PageTemplate;
+import com.gpipi.career.page.TemplateResolver;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/views")
 public class ViewController {
 
-	private final PageTemplateResolver resolver;
+	private final TemplateResolver resolver;
 	
-	public ViewController(PageTemplateResolver resolver) {
+	public ViewController(TemplateResolver resolver) {
 		this.resolver = resolver;
 	}
 	
 	// -> view main
 	@GetMapping(value = {"/", ""})
 	public String mainRedirect() {
-		return "redirect:/views/main";
+		return resolver.redirectView("main");
 	}
 	
 	// -> view {pageKey}
 	@GetMapping("/{pageKey}")
 	public String viewPage(@PathVariable String pageKey,
-										 Model model) {
-		try {
-			String viewPath = resolver.resolve(pageKey);
-			model.addAttribute("content", viewPath);
-			return "index";
-		} catch (IllegalArgumentException ex) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Page not found : " + pageKey);
+						   @RequestParam(value = "error", required = false) String error,
+										 Model model,
+										 HttpSession session) {
+		PageTemplate page = PageTemplate.ofKey(pageKey)
+				.orElseThrow(() -> new ResponseStatusException(
+						HttpStatus.NOT_FOUND, "Page not found : "  + pageKey
+				));
+		if(page == PageTemplate.LOGIN && error != null) {
+			model.addAttribute("errorMessage", "E-mail又はパスワードが違います");
 		}
+		String viewPath = resolver.pageResolve(pageKey);
+		model.addAttribute("content", viewPath);
+		
+		return "index";
 	}
 	
 }
