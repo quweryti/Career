@@ -69,7 +69,7 @@ public class SecurityConfig {
     					PageTemplate.MAIN.getViewUrl(),
     					PageTemplate.LOGIN.getViewUrl(),
     					PageTemplate.JOIN.getViewUrl(),
-    					PageTemplate.JOINSUCCESS.getViewUrl(),
+    					PageTemplate.SUCCESS.getViewUrl(),
     					LogicTemplate.JOIN.getLogicUrl(),
     					LogicTemplate.LOGIN.getLogicUrl(),
     					LogicTemplate.LOGOUT.getLogicUrl(),

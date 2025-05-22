@@ -10,8 +10,6 @@ package com.gpipi.career.domain.entity;
 
 import java.time.LocalDateTime;
 
-import com.gpipi.career.web.dto.MemberSessionDto;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -52,10 +50,6 @@ public class Member {
 	private LocalDateTime signupDate;
 	
 	@Column(name = "is_deleted", nullable = false, length = 1)
-	private String isDeleted;
-	
-	public MemberSessionDto toSessionDto() {
-		return new MemberSessionDto(this.name, this.email);
-	}
+	private boolean isDeleted;
 	
 }

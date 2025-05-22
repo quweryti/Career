@@ -56,8 +56,8 @@ public class AuthController {
 			return "index";
 		}
 		// 등록 성공 메시지
-		ra.addFlashAttribute("joinSuccess", "会員登録完了");
-		return resolver.redirectView("joinsuccess");
+		ra.addFlashAttribute("success", "会員登録完了");
+		return resolver.redirectView("success");
 	}
 
 }

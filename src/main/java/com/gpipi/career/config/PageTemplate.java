@@ -12,8 +12,9 @@ import java.util.Optional;
 public enum PageTemplate {
 	MAIN("main/main", "/views/main"),
 	JOIN("main/memberjoin", "/views/join"),
-	JOINSUCCESS("main/joinsuccess", "/views/joinsuccess"),
-	LOGIN("main/login", "/views/login");
+	SUCCESS("main/joinsuccess", "/views/success"),
+	LOGIN("main/login", "/views/login"),
+	INFO("main/memberinfo", "/views/info");
 	
 	private final String viewPath;
 	private final String viewUrl;

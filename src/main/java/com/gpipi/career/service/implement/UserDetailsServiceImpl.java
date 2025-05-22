@@ -1,3 +1,10 @@
+/**
+ * UserDetailsServiceImpl.java
+ * @since       2025-05-13
+ * @version     1.0.0
+ * @author      Kwon Yujin
+ * @see			 
+ */
 package com.gpipi.career.service.implement;
 
 import java.util.List;
@@ -25,7 +32,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		Member member = memberRepository.findByEmail(email)
 				.orElseThrow(() -> new UsernameNotFoundException("user definded : " + email));
-		if("1".equals(member.getIsDeleted())) {
+		if(member.isDeleted()) {
 			throw new UsernameNotFoundException("user deleted : " + email);
 		}
 		List<GrantedAuthority> authorities = List.of(
@@ -35,6 +42,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 				.username(member.getEmail())
 				.password(member.getPassword())
 				.authorities(authorities)
+				.disabled(member.isDeleted())
 				.build();
 	}
 
