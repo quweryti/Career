@@ -19,17 +19,23 @@ public class CustomUserDetails implements UserDetails {
 	
 	private static final long serialVersionUID = 1L;
 	private final Member member;
+	private final Collection<? extends GrantedAuthority> authorities;
 	
-	public CustomUserDetails(Member member) {
+	public CustomUserDetails(Member member, Collection<? extends GrantedAuthority> authorities) {
 		this.member = member;
+		this.authorities = authorities;
 	}
 	
 	public Long getId() {
-		return member.getMember_id();
+		return member.getMemberId();
 	}
 	
 	public Member getMember() {
 		return member;
+	}
+	
+	public Collection<? extends GrantedAuthority> authorities() {
+		return authorities;
 	}
 	
 	@Override

@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "FOLLOWS")
+@Table(name = "follows")
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -36,15 +36,15 @@ public class Follow {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "FOLLOW_ID")
+	@Column(name = "follow_id")
 	private Long followId;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "MEMBER_ID", nullable = false)
+	@JoinColumn(name = "member_id", nullable = false)
 	private Member member;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "FOLLOWEE_ID", nullable = false)
+	@JoinColumn(name = "followee_id", nullable = false)
 	private Member followee;
 	
 	@Override

@@ -12,7 +12,12 @@ import java.util.Optional;
 public enum LogicTemplate {
 	LOGIN("/auth/login"),
 	LOGOUT("/auth/logout"),
-	JOIN("/auth/join");
+	JOIN("/auth/join"),
+    UPDATE_NAME("/auth/updateName"),
+    UPDATE_PASSWORD("/auth/updatePassword"),
+    UPDATE_LINK("/auth/updateLink"),
+    DELETE_FOLLOW("/auth/deleteFollow"),
+    UPDATE_IS_DELETE("/auth/updateIsDelete");
 
 	private final String logicKey;
 	

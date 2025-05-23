@@ -8,5 +8,93 @@
 	@see: layout.html
   -->
 <div xmlns:th="http://www.thymeleaf.org" th:fragment="siteMain">
-	
+	<h2>회원 정보 수정</h2>
+
+	    <!-- 프로필 이미지 -->
+	    <div class="profile-image my-4">
+	        <img th:src="@{${memberInfo.profileImageUrl}}"
+	             alt="프로필 이미지"
+	             style="width:120px; height:120px; object-fit:cover; border-radius:50%;" />
+	    </div>
+
+	    <!-- 이름 변경 폼 -->
+	    <form th:action="@{/auth/updateName}"
+	          th:object="${nameUpdateForm}"
+	          method="post"
+	          class="mb-4">
+	        <label for="name">이름</label>
+	        <input type="text"
+	               id="name"
+	               th:field="*{name}"
+	               th:placeholder="${memberInfo.name}"
+	               required />
+	        <button type="submit">이름 변경</button>
+	    </form>
+
+	    <!-- 비밀번호 변경 폼 -->
+	    <form th:action="@{/auth/updatePassword}"
+	          th:object="${passwordUpdateForm}"
+	          method="post"
+	          class="mb-4">
+	        <label for="currentPassword">현재 비밀번호</label>
+	        <input type="password"
+	               id="currentPassword"
+	               th:field="*{currentPassword}"
+	               required />
+
+	        <label for="newPassword">새 비밀번호</label>
+	        <input type="password"
+	               id="newPassword"
+	               th:field="*{newPassword}"
+	               required />
+
+	        <button type="submit">비밀번호 변경</button>
+	    </form>
+
+	    <hr />
+
+	    <!-- 링크 리스트 & 수정 -->
+	    <h3 class="mt-4">등록된 링크</h3>
+	    <ul>
+	        <li th:each="link, stat : *{links}">
+	            <a th:href="${link}" th:text="${link}" target="_blank"></a>
+	            <form th:action="@{/auth/updateLink}"
+	                  method="post"
+	                  style="display:inline;">
+	                <input type="hidden" name="index" th:value="${stat.index}" />
+	                <input type="text" name="newLink" placeholder="새 링크" required />
+	                <button type="submit">수정</button>
+	            </form>
+	        </li>
+	        <li th:if="${#lists.isEmpty(memberInfo.links)}">등록된 링크가 없습니다.</li>
+	    </ul>
+
+	    <hr />
+
+	    <!-- 팔로우 리스트 & 취소 -->
+	    <h3 class="mt-4">팔로우한 회원</h3>
+	    <ul>
+	        <li th:each="id : *{followIds}">
+	            <span th:text="${id}"></span>
+	            <form th:action="@{/auth/deleteFollow}"
+	                  method="post"
+	                  style="display:inline;">
+	                <input type="hidden" name="followId" th:value="${id}" />
+	                <button type="submit">❌</button>
+	            </form>
+	        </li>
+	        <li th:if="${#lists.isEmpty(memberInfo.followIds)}">팔로우 중인 회원이 없습니다.</li>
+	    </ul>
+
+	    <hr />
+
+	    <!-- 회원 탈퇴 -->
+	    <form th:action="@{/auth/updateIsDelete}"
+	          method="post"
+	          class="mt-4">
+	        <button type="submit"
+	                onclick="return confirm('정말 탈퇴하시겠습니까?');">
+	            회원 탈퇴
+	        </button>
+	    </form>
 </div>

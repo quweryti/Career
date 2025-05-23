@@ -15,10 +15,11 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+
+import com.gpipi.career.security.CustomUserDetailsService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -26,7 +27,7 @@ import lombok.RequiredArgsConstructor;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
-    private final UserDetailsService userDetailsService;
+    private final CustomUserDetailsService customUserDetailsService;
     private static final String USERNAME_PARAM = "memberEmail";
 	private static final String PASSWORD_PARAM = "memberPassword";
 	/**
@@ -81,7 +82,7 @@ public class SecurityConfig {
     	    	.authenticated() // 그 외 모든 요청은 인증 필요
 		)
         // 사용자 인증 서비스 설정
-    	.userDetailsService(userDetailsService)
+    	.userDetailsService(customUserDetailsService)
         // 폼 로그인 설정
     	.formLogin(form -> form
     			.loginPage(PageTemplate.LOGIN.getViewUrl()) // GET 로그인 폼 URL

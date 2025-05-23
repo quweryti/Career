@@ -59,5 +59,30 @@ public class AuthController {
 		ra.addFlashAttribute("success", "会員登録完了");
 		return resolver.redirectView("success");
 	}
+	
+	@PostMapping("/updateName")
+	public String updateName() {
+		return null;
+	}
+	
+	@PostMapping("/updatePassword")
+	public String updatePassword() {
+		return null;
+	}	
 
+	@PostMapping("/updateLink")
+	public String updateLink() {
+		return null;
+	}
+
+	@PostMapping("/deleteFollow")
+	public String deleteFollow() {
+		return null;
+	}
+
+	@PostMapping("/updateIsDelete")
+	public String updateIsDelete() {
+		return null;
+	}
+	
 }

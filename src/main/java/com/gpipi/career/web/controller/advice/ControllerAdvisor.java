@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.gpipi.career.web.form.LoginForm;
 import com.gpipi.career.web.form.MemberJoinForm;
+import com.gpipi.career.web.form.NameUpdateForm;
+import com.gpipi.career.web.form.PasswordUpdateForm;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -37,5 +39,23 @@ public class ControllerAdvisor {
 		}
 		return null;
 	}
+	
+	@ModelAttribute("nameUpdateForm")
+	public NameUpdateForm nameUpdateForm(HttpServletRequest request) {
+		String uri = request.getRequestURI();
+		if(uri.endsWith("/views/info") || uri.endsWith("/auth/updateName")) {
+			return new NameUpdateForm();
+		}
+		return null;
+	}
 
+	@ModelAttribute("passwordUpdateForm")
+	public PasswordUpdateForm passwordUpdateForm(HttpServletRequest request) {
+		String uri = request.getRequestURI();
+		if(uri.endsWith("/views/info") || uri.endsWith("/auth/updatePassword")) {
+			return new PasswordUpdateForm();
+		}
+		return null;
+	}
+	
 }

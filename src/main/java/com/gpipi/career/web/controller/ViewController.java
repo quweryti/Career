@@ -43,14 +43,19 @@ public class ViewController {
 
 	// -> view {pageKey}
 	@GetMapping("/{pageKey}")
-	public String viewPage(@PathVariable String pageKey, @RequestParam(value = "error", required = false) String error,
-			Model model, @AuthenticationPrincipal CustomUserDetails user) {
+	public String viewPage(@PathVariable String pageKey,
+						   @RequestParam(required = false) String error,
+						   													Model model,
+						   @AuthenticationPrincipal CustomUserDetails user) {
 		PageTemplate page = PageTemplate.ofKey(pageKey)
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Page not found : " + pageKey));
 		if (page == PageTemplate.LOGIN && error != null) {
 			model.addAttribute("errorMessage", "E-mail又はパスワードが違います");
 		}
 		if (page == PageTemplate.INFO) {
+			if(user == null) {
+				return resolver.redirectView("login");
+			}
 			model.addAttribute("memberInfo", memberService.getDto(user.getId()));
 		}
 		model.addAttribute("content", resolver.pageResolve(pageKey));

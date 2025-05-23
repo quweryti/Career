@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.gpipi.career.dao.repository.MemberRepository;
+import com.gpipi.career.dao.repository.ProfileImageRepository;
 import com.gpipi.career.dao.repository.FollowRepository;
 import com.gpipi.career.dao.repository.LinkRepository;
 import com.gpipi.career.domain.entity.Member;
@@ -29,17 +30,22 @@ public class MemberServiceImpl implements MemberService {
 	private final MemberRepository memberRepository;
 	private final LinkRepository linkRepository;
 	private final FollowRepository followRepository;
-
+	private final ProfileImageRepository profileImageRepository;
+	
 	@Override
 	public MemberSessionDto getDto(Long memberId) {
 		Member member = memberRepository.findById(memberId)
 				.orElseThrow(() ->
 				new IllegalArgumentException("会員情報がございません" + memberId));
 		
-		List<String> links = linkRepository.findUrlByMemberEmail(member.getMember_id());
-		List<Long> follows = followRepository.findFolloweeIdByMemberId(member.getMember_id());
+		List<String> links = linkRepository.findUrlByMember_MemberId(member.getMemberId());
+		List<Long> follows = followRepository.findFolloweeIdByMember_MemberId(member.getMemberId());
+		String profileImageUrl = profileImageRepository
+								 .findByMember_MemberId(memberId)
+								 .map(pi -> pi.getResolveUrl())
+								 .orElse("/images/profile/default.png");
 		
-		return MemberSessionDto.fromEntity(member, links, follows);
+		return MemberSessionDto.fromEntity(member, links, follows, profileImageUrl);
 	}
-
-}
+	
+};

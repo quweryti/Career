@@ -21,15 +21,18 @@ public class MemberSessionDto {
 	private String email;
 	private List<String> links;
 	private List<Long> followIds;
+	private String profileImageUrl;
 	
 	public static MemberSessionDto fromEntity(Member member,
 											  List<String> links,
-											  List<Long> follows) {
+											  List<Long> follows,
+											  String profileImageUrl) {
 		return MemberSessionDto.builder()
 				.name(member.getName())
 				.email(member.getEmail())
 				.links(links)
 				.followIds(follows)
+				.profileImageUrl(profileImageUrl)
 				.build();
 	}
 

@@ -1,6 +1,6 @@
 /**
- * Link.java
- * @since       2025-05-22
+ * ProfileImage.java
+ * @since       2025-05-23
  * @version     1.0.0
  * @author      Kwon Yujin
  * @see         org.springframework
@@ -14,34 +14,39 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Table(name = "links")
+@Table(name = "profile_image")
 @Getter
-@Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
-@Builder
-public class Link {
+@NoArgsConstructor
+public class ProfileImage {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "link_id")
-	private Long linkId;
+	private Long id;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "member_id", nullable = false)
 	private Member member;
 	
-	@Column(name = "url", nullable = false, length = 2048)
-	private String url;
-
+	@Column(name = "file_name", nullable = false, length = 255)
+	private String fileName;
+	
+	@Column(name = "file_path", nullable = false, length = 500)
+	private String filePath;
+	
+	public ProfileImage(Member member, String fileName, String filePath) {
+		this.member = member;
+		this.fileName = fileName;
+		this.filePath = filePath;
+	}
+	
+	public String getResolveUrl() {
+		return "/images/profile/" + fileName;
+	}
+	
 }
