@@ -58,4 +58,31 @@ public class ControllerAdvisor {
 		return null;
 	}
 	
+	@ModelAttribute("updateLink")
+	public PasswordUpdateForm updateLink(HttpServletRequest request) {
+		String uri = request.getRequestURI();
+		if(uri.endsWith("/views/info") || uri.endsWith("/auth/updateLink")) {
+			return new PasswordUpdateForm();
+		}
+		return null;
+	}
+	
+	@ModelAttribute("deleteFollow")
+	public PasswordUpdateForm deleteFollow(HttpServletRequest request) {
+		String uri = request.getRequestURI();
+		if(uri.endsWith("/views/info") || uri.endsWith("/auth/deleteFollow")) {
+			return new PasswordUpdateForm();
+		}
+		return null;
+	}
+	
+	@ModelAttribute("updateIsDelete")
+	public PasswordUpdateForm updateIsDelete(HttpServletRequest request) {
+		String uri = request.getRequestURI();
+		if(uri.endsWith("/views/info") || uri.endsWith("/auth/updateIsDelete")) {
+			return new PasswordUpdateForm();
+		}
+		return null;
+	}
+	
 }

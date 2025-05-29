@@ -9,8 +9,6 @@
 package com.gpipi.career.web.form;
 
 import com.gpipi.career.service.dto.LoginRequestDto;
-import com.gpipi.career.service.dto.MemberJoinRequestDto;
-
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

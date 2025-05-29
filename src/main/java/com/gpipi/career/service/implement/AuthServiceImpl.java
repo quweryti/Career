@@ -16,6 +16,7 @@ import com.gpipi.career.dao.mapper.AuthMapper;
 import com.gpipi.career.dao.repository.MemberRepository;
 import com.gpipi.career.domain.entity.Member;
 import com.gpipi.career.exception.DuplicateMemberException;
+import com.gpipi.career.exception.InvalidCurrentPasswordException;
 import com.gpipi.career.service.AuthService;
 import com.gpipi.career.service.dto.MemberJoinRequestDto;
 
@@ -27,12 +28,12 @@ public class AuthServiceImpl implements AuthService {
 	private final AuthMapper authDao;
 	private final PasswordEncoder passwordEncoder;
 	
-	public AuthServiceImpl(MemberRepository memberRepository,
-						   AuthMapper authDao,
-						   PasswordEncoder passwordEncoder) {
-		this.memberRepository = memberRepository;
+	public AuthServiceImpl(AuthMapper authDao,
+			   			   PasswordEncoder passwordEncoder,
+						   MemberRepository memberRepository) {
 		this.authDao = authDao;
 		this.passwordEncoder = passwordEncoder;
+		this.memberRepository = memberRepository;
 	}
 	
 	@Override
@@ -56,6 +57,20 @@ public class AuthServiceImpl implements AuthService {
 		
 		// DB에 저장
 		authDao.insertMember(member);
+	}
+
+	@Override
+	public void updatePassword(String currentPassword, String newPassword, Long id) {
+		Member member = memberRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("올바른 회원 ID가 아닙니다."));
+		
+		if(!passwordEncoder.matches(currentPassword, member.getPassword())) {
+			throw new InvalidCurrentPasswordException();
+		}
+		
+		String encodedNewPassword = passwordEncoder.encode(newPassword);
+		member.setPassword(encodedNewPassword);
+		
+		memberRepository.save(member);
 	}
 
 }

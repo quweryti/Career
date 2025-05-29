@@ -8,6 +8,7 @@
 package com.gpipi.career.dao.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -24,4 +25,10 @@ public interface FollowRepository extends JpaRepository<Follow, Long> {
 			""")
 	List<Long> findFolloweeIdByMember_MemberId(@Param("memberId") Long member_id);
 
+	Optional<Follow> findById(Long followId);
+	
+	boolean existsByMemberIdAndFolloweeId(Long memberId, Long followeeId);
+	
+	void deleteByMemberIdAndFolloweeId(Long memberId, Long followeeId);
+	
 }

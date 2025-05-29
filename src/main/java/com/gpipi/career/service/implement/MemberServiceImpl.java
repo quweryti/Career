@@ -48,4 +48,19 @@ public class MemberServiceImpl implements MemberService {
 		return MemberSessionDto.fromEntity(member, links, follows, profileImageUrl);
 	}
 	
+	@Override
+	public void updateName(String name, Long id) {
+		
+	}
+	
+	@Override
+	public void updateLink(Integer index, String newLink, Long id) {
+		
+	}
+
+	@Override
+	public void deleteAccount(Long id) {
+		
+	}
+	
 };

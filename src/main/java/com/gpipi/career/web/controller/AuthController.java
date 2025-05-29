@@ -8,6 +8,7 @@
  */
 package com.gpipi.career.web.controller;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,8 +19,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gpipi.career.exception.DuplicateMemberException;
 import com.gpipi.career.page.TemplateResolver;
+import com.gpipi.career.security.CustomUserDetails;
 import com.gpipi.career.service.AuthService;
+import com.gpipi.career.service.FollowService;
+import com.gpipi.career.service.MemberService;
+import com.gpipi.career.web.form.DeleteFollowForm;
 import com.gpipi.career.web.form.MemberJoinForm;
+import com.gpipi.career.web.form.NameUpdateForm;
+import com.gpipi.career.web.form.PasswordUpdateForm;
+import com.gpipi.career.web.form.UpdateIsDeleteForm;
+import com.gpipi.career.web.form.UpdateLinkForm;
 
 import jakarta.validation.Valid;
 
@@ -29,10 +38,17 @@ public class AuthController {
 	
 	private final TemplateResolver resolver;
 	private final AuthService authService;
+	private final MemberService memberService;
+	private final FollowService followService;
 
-	public AuthController(TemplateResolver resolver, AuthService authService) {
+	public AuthController(TemplateResolver resolver,
+						  AuthService authService,
+						  MemberService memberService,
+						  FollowService followService) {
 		this.resolver = resolver;
 		this.authService = authService;
+		this.memberService = memberService;
+		this.followService = followService;
 	}
 	
 	@PostMapping("/join")
@@ -61,28 +77,84 @@ public class AuthController {
 	}
 	
 	@PostMapping("/updateName")
-	public String updateName() {
-		return null;
+	public String updateName(@Valid
+							 @ModelAttribute("nameUpdateForm") NameUpdateForm form,
+							 @AuthenticationPrincipal CustomUserDetails user,
+							 BindingResult br,
+							 Model model,
+							 RedirectAttributes ra) {
+		if(br.hasErrors()) {
+			model.addAttribute("content", resolver.pageResolve("info"));
+			
+			return "index";
+		}
+		memberService.updateName(form.getName(), user.getId());
+		ra.addFlashAttribute("NameUpdateResult", "名前を変更しました");
+		
+		return resolver.redirectView("info");
 	}
 	
 	@PostMapping("/updatePassword")
-	public String updatePassword() {
-		return null;
+	public String updatePassword(@Valid
+								 @ModelAttribute("passwordUpdateForm") PasswordUpdateForm form,
+								 @AuthenticationPrincipal CustomUserDetails user,
+								 BindingResult br,
+								 Model model,
+								 RedirectAttributes ra) {
+		if(br.hasErrors()) {
+			model.addAttribute("content", resolver.pageResolve("info"));
+			
+			return "index";
+		}
+		authService.updatePassword(form.getCurrentPassword(), form.getNewPassword(), user.getId());
+		ra.addFlashAttribute("PasswordUpdateResult", "パスワードを変更しました");
+		return resolver.redirectView("info");
 	}	
-
+	
 	@PostMapping("/updateLink")
-	public String updateLink() {
-		return null;
+	public String updateLink(@Valid
+							 @ModelAttribute("updateLinkForm") UpdateLinkForm form,
+							 @AuthenticationPrincipal CustomUserDetails user,
+							 BindingResult br,
+							 Model model,
+							 RedirectAttributes ra) {
+		if(br.hasErrors()) {
+			model.addAttribute("content", resolver.pageResolve("info"));
+			
+			return "index";
+		}
+		memberService.updateLink(form.getIndex(), form.getNewLink(), user.getId());
+		ra.addFlashAttribute("UpdateLinkResult", "リンクを更新しました");
+		
+		return resolver.redirectView("info");
 	}
-
+	
 	@PostMapping("/deleteFollow")
-	public String deleteFollow() {
-		return null;
+	public String deleteFollow(@Valid
+							   @ModelAttribute("deleteFollowForm") DeleteFollowForm form,
+							   @AuthenticationPrincipal CustomUserDetails user,
+							   BindingResult br,
+							   Model model,
+							   RedirectAttributes ra) {
+		if(br.hasErrors()) {
+			model.addAttribute("content", resolver.pageResolve("info"));
+			
+			return "index";
+		}
+		followService.deleteFollow(form.getFollowId(), user.getId());
+		ra.addFlashAttribute("DeleteFollowResult", "フォローを削除しました");
+		
+		return resolver.redirectView("info");
 	}
-
+	
 	@PostMapping("/updateIsDelete")
-	public String updateIsDelete() {
-		return null;
+	public String updateIsDelete(@Valid
+								 @ModelAttribute("updateIsDeleteForm") UpdateIsDeleteForm form,
+								 @AuthenticationPrincipal CustomUserDetails user,
+								 RedirectAttributes ra) {
+		memberService.deleteAccount(user.getId());
+		ra.addFlashAttribute("UpdateIsDeleteResult", "会員を退会しました");
+		return resolver.redirectView("login");
 	}
 	
 }

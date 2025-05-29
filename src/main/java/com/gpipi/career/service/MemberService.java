@@ -12,5 +12,11 @@ import com.gpipi.career.web.dto.MemberSessionDto;
 public interface MemberService {
 	
 	public MemberSessionDto getDto(Long memberId);
+
+	void updateName(String name, Long id);
+
+	void updateLink(Integer index, String newLink, Long id);
+
+	void deleteAccount(Long id);
 	
 }

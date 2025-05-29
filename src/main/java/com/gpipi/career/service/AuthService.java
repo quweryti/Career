@@ -12,5 +12,7 @@ import com.gpipi.career.service.dto.MemberJoinRequestDto;
 public interface AuthService {
 	
 	void register(MemberJoinRequestDto requestDto);
-	
+
+	void updatePassword(String currentPassword, String newPassword, Long id);
+
 }
