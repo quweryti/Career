@@ -19,11 +19,19 @@ public interface TemplateResolver {
 	String logicResolve(String logicKey);
 	
 	default String forwardView(String pageKey) {
-		return "forward:/views/" + pageKey;
+		return "forward:" + pageResolve(pageKey);
 	}
 	
 	default String redirectView(String pageKey) {
-		return "redirect:/views/" + pageKey;
+		return "redirect:" + pageResolve(pageKey);
+	}
+	
+	default String forwardLogic(String logicKey) {
+		return "forward:" + logicResolve(logicKey);
+	}
+	
+	default String redirectLogic(String logicKey) {
+		return "redirect:" + logicResolve(logicKey);
 	}
 
 }

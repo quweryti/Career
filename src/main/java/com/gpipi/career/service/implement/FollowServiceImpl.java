@@ -7,10 +7,13 @@
  */
 package com.gpipi.career.service.implement;
 
+import org.springframework.stereotype.Service;
+
 import com.gpipi.career.dao.repository.FollowRepository;
 import com.gpipi.career.exception.FollowNotFoundException;
 import com.gpipi.career.service.FollowService;
 
+@Service
 public class FollowServiceImpl implements FollowService {
 	
 	private final FollowRepository followRepository;
@@ -27,7 +30,7 @@ public class FollowServiceImpl implements FollowService {
 			throw new FollowNotFoundException(memberId, followeeId);
 		}
 		
-		followRepository.deleteByMemberIdAndFolloweeId(memberId, followeeId);
+		followRepository.deleteByMember_MemberIdAndFollowee_FolloweeId(memberId, followeeId);
 	}
 	
 }

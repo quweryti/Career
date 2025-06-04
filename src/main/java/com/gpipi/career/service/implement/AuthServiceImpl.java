@@ -23,7 +23,7 @@ import com.gpipi.career.service.dto.MemberJoinRequestDto;
 @Service
 @Transactional
 public class AuthServiceImpl implements AuthService {
-
+	
 	private final MemberRepository memberRepository;
 	private final AuthMapper authDao;
 	private final PasswordEncoder passwordEncoder;
@@ -58,7 +58,7 @@ public class AuthServiceImpl implements AuthService {
 		// DB에 저장
 		authDao.insertMember(member);
 	}
-
+	
 	@Override
 	public void updatePassword(String currentPassword, String newPassword, Long id) {
 		Member member = memberRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("올바른 회원 ID가 아닙니다."));
@@ -69,8 +69,6 @@ public class AuthServiceImpl implements AuthService {
 		
 		String encodedNewPassword = passwordEncoder.encode(newPassword);
 		member.setPassword(encodedNewPassword);
-		
-		memberRepository.save(member);
 	}
-
+	
 }

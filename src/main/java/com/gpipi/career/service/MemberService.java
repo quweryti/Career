@@ -15,8 +15,8 @@ public interface MemberService {
 
 	void updateName(String name, Long id);
 
-	void updateLink(Integer index, String newLink, Long id);
-
+	void updateLink(Long linkId, Long memberId, String newUrl);
+	
 	void deleteAccount(Long id);
 	
 }

@@ -85,6 +85,7 @@ public class AuthController {
 							 RedirectAttributes ra) {
 		if(br.hasErrors()) {
 			model.addAttribute("content", resolver.pageResolve("info"));
+			br.rejectValue("name", "updateName.name.error", "");
 			
 			return "index";
 		}
@@ -103,6 +104,9 @@ public class AuthController {
 								 RedirectAttributes ra) {
 		if(br.hasErrors()) {
 			model.addAttribute("content", resolver.pageResolve("info"));
+			br.rejectValue("currentPassword", "updatePassword.currentPassword.error", "");
+			br.rejectValue("newPassword", "updatePassword.newPassword.error", "");
+			br.rejectValue("confirmPassword", "updatePassword.confirmPassword.error", "");
 			
 			return "index";
 		}
@@ -120,10 +124,12 @@ public class AuthController {
 							 RedirectAttributes ra) {
 		if(br.hasErrors()) {
 			model.addAttribute("content", resolver.pageResolve("info"));
+			br.rejectValue("linkId", "updateLink.linkId.error", "");
+			br.rejectValue("newLink", "update.newLink.error", "");
 			
 			return "index";
 		}
-		memberService.updateLink(form.getIndex(), form.getNewLink(), user.getId());
+		memberService.updateLink(form.getLinkId(), user.getId(), form.getNewLink());
 		ra.addFlashAttribute("UpdateLinkResult", "リンクを更新しました");
 		
 		return resolver.redirectView("info");
@@ -154,7 +160,8 @@ public class AuthController {
 								 RedirectAttributes ra) {
 		memberService.deleteAccount(user.getId());
 		ra.addFlashAttribute("UpdateIsDeleteResult", "会員を退会しました");
-		return resolver.redirectView("login");
+		
+		return resolver.redirectLogic("logout");
 	}
 	
 }

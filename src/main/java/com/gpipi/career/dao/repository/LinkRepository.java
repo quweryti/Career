@@ -8,6 +8,7 @@
 package com.gpipi.career.dao.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -24,4 +25,14 @@ public interface LinkRepository extends JpaRepository<Link, Long> {
 			""")
 	List<String> findUrlByMember_MemberId(@Param("memberId") Long member_id);
 
+	@Query("""
+			select l
+			from Link l
+			where l.linkId = :linkId
+			and l.member.memberId = :memberId
+			""")
+	Optional<Link> findByLinkIdAndMember_MemberId(@Param("linkId") Long linkId,
+												  @Param("memberId") Long memberId);
+	
+	
 }

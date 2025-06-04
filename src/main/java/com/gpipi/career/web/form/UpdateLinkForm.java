@@ -19,7 +19,7 @@ import lombok.Setter;
 public class UpdateLinkForm {
 
 	@NotNull
-	private Integer index;
+	private Long linkId;
 	
 	@NotBlank
 	private String newLink;
